@@ -471,10 +471,13 @@ function setupAccommodationPayment(){
     var amount=count*150;
     if(amountEl) amountEl.textContent="Total Accommodation Amount: ₹"+amount+" (₹150 × "+count+" member"+(count===1?"":"s")+")";
     var params="pa="+encodeURIComponent(vpa)+"&pn="+encodeURIComponent(ACCOMMODATION_UPI_NAME)+"&am="+amount+"&cu=INR&tn="+encodeURIComponent("PLASMA2K26 Accommodation - "+count+" member(s)");
-    if(g) g.href="tez://upi/pay?"+params;
-    if(p) p.href="phonepe://pay?"+params;
-    if(t) t.href="paytmmp://pay?"+params;
-    if(u) u.href="upi://pay?"+params;
+    var isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    var upiLink="upi://pay?"+params;
+    // Mobile: open the native UPI app. PC: open the provider's web payment page.
+    if(g) { g.href=isMobile ? "tez://upi/pay?"+params : "https://pay.google.com/gp/p/ui/pay?"+params; }
+    if(p) { p.href=isMobile ? "phonepe://pay?"+params : "https://www.phonepe.com/"; }
+    if(t) { t.href=isMobile ? "paytmmp://pay?"+params : "https://paytm.com/"; }
+    if(u) { u.href=isMobile ? upiLink : "https://www.google.com/search?q="+encodeURIComponent("UPI payment "+vpa); }
   }
   if(countEl) countEl.addEventListener("input",update);
   [g,p,t,u].forEach(function(btn){
