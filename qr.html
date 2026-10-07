@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PLASMA 2K26 QR Codes</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>body{margin:0;padding:24px;background:#0a0410;color:#f3e9f5;font-family:system-ui,sans-serif}
+h1{color:#e0b04a}input{width:100%;max-width:420px;padding:10px;border-radius:8px;border:1px solid #3a1d4a;background:#160a1f;color:#f3e9f5}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:20px}
+.c{background:#160a1f;border:1px solid #2a1638;border-radius:12px;padding:16px;text-align:center}
+.c h3{margin:0 0 10px;color:#ff3d8b;font-size:16px}.q{background:#fff;padding:10px;display:inline-block;border-radius:8px}
+.c a,.c button{display:block;margin:8px auto 0;color:#e0b04a;font-size:12px;word-break:break-all;background:none;border:1px solid #6b2a44;border-radius:6px;padding:6px 12px;cursor:pointer;text-decoration:none}</style></head><body>
+<h1>PLASMA 2K26: Registration QR codes</h1>
+<p>Website URL (no trailing slash):</p><input id="u"><div class="g" id="g"></div>
+<script>
+var SB_URL="https://ovuvtarrhfoyekbpppwh.supabase.co",SB_KEY="sb_publishable_Z6dLzghS7u2xUjOy93BxwQ_R2QhWikq";
+var u=document.getElementById("u");u.value=location.protocol.indexOf("http")===0?location.origin:"https://YOUR-SITE.vercel.app";
+async function go(){var g=document.getElementById("g");g.innerHTML="";
+var r=await fetch(SB_URL+"/rest/v1/events?select=id,name&order=id",{headers:{apikey:SB_KEY,Authorization:"Bearer "+SB_KEY}});var ev=await r.json();
+var all=[{id:"",name:"All events (main registration)"}].concat(ev);
+all.forEach(function(e){var link=u.value.replace(/\/$/,"")+"/"+(e.id?"?event="+e.id:"")+"#register";
+var c=document.createElement("div");c.className="c";c.innerHTML="<h3></h3><div class='q'></div><a></a><button>Download PNG</button>";
+c.querySelector("h3").textContent=e.name;var a=c.querySelector("a");a.href=link;a.textContent=link;g.appendChild(c);
+var box=c.querySelector(".q");new QRCode(box,{text:link,width:180,height:180});
+c.querySelector("button").onclick=function(){var cv=box.querySelector("canvas"),l=document.createElement("a");l.download=e.name.replace(/\W+/g,"-")+".png";l.href=cv.toDataURL();l.click()}})}
+u.onchange=go;go();
+</script></body></html>
