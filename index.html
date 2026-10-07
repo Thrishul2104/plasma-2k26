@@ -200,6 +200,7 @@ body::before{
 .upi-note{font-size:12px!important;color:#9f8ca9!important;margin-top:12px!important}
 <style>
 .member-count-box input{font-size:1rem;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.22);color:inherit;border-radius:10px;padding:12px 14px;box-sizing:border-box}
+.status-chip{display:inline-flex;align-items:center;gap:8px}.status-dot{width:9px;height:9px;border-radius:50%;background:#22c55e;display:inline-block;box-shadow:0 0 0 3px rgba(34,197,94,.15),0 0 10px rgba(34,197,94,.8);animation:statusPulse 1.8s infinite}@keyframes statusPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.12)}}
 </style>
 </style>
 
@@ -337,7 +338,7 @@ body::before{
       <div class="paybox">
         <b>Accommodation Payment</b>
         <p class="muted">Please complete the accommodation payment using the UPI ID below.</p>
-        <div class="upi-id" id="accommodationUpiDisplay">9380795731-2@axl</div>
+        <div class="upi-id" id="accommodationUpiDisplay">REPLACE_WITH_ACCOMMODATION_UPI_ID</div>
         <div class="member-count-box" style="margin-top:14px">
           <label for="accommodation_member_count"><b>Accommodation Member Count</b></label>
           <input type="number" id="accommodation_member_count" name="accommodation_member_count" min="1" step="1" value="1" placeholder="Enter number of members" style="width:100%;margin-top:8px">
@@ -598,7 +599,7 @@ document.getElementById("event-list").addEventListener("click",function(ev){
  var card=ev.target.closest("[data-open]");if(card){document.getElementById("f_event").value=card.dataset.open;updatePay();document.getElementById("register").scrollIntoView({behavior:"smooth"})}
 });
 document.getElementById("rf").addEventListener("submit",async function(ev){ev.preventDefault();
- var m=document.getElementById("msg"),body={event_id:+document.getElementById("f_event").value,name:f_name.value.trim(),email:f_email.value.trim(),phone:f_phone.value.trim(),college:f_college.value.trim(),team_members:f_team.value.trim(),payment_ref:f_payref.value.trim(),accommodation_required:(document.querySelector('input[name="accommodation"]:checked')||{}).value||null,accommodation_member_count:parseInt((document.getElementById("accommodation_member_count")||{}).value||"0",10)||null,accommodation_utr:(document.getElementById("accommodation_utr")||{}).value||null};
+ var m=document.getElementById("msg"),body={event_id:+document.getElementById("f_event").value,name:f_name.value.trim(),email:f_email.value.trim(),phone:f_phone.value.trim(),college:f_college.value.trim(),team_members:f_team.value.trim(),payment_ref:f_payref.value.trim(),accommodation_required:(document.querySelector('input[name="accommodation"]:checked')||{}).value||null,accommodation_member_count:parseInt((document.getElementById("accommodation_member_count")||{}).value||"0",10)||null,accommodation_amount:(parseInt((document.getElementById("accommodation_member_count")||{}).value||"0",10)||0)*150,accommodation_utr:(document.getElementById("accommodation_utr")||{}).value||null};
  if(!live){m.textContent="Demo mode: add your Supabase URL and key to save registrations.";return}
  try{var r=await fetch(SB_URL+"/rest/v1/registrations",{method:"POST",headers:Object.assign(hdr(),{Prefer:"return=minimal"}),body:JSON.stringify(body)});
  m.textContent=r.ok?"Registered! See you at PLASMA 2K26.":(r.status===409?"You are already registered for this event.":"Something went wrong. Please try again.");if(r.ok)this.reset()}
