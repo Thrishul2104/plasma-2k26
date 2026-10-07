@@ -198,6 +198,9 @@ body::before{
 .accommodation-pay-options .pay-app{flex:1 1 150px;min-width:140px;text-align:center;padding:11px 14px;border-radius:8px;text-decoration:none;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--mag),var(--vio));transition:.25s}
 .accommodation-pay-options .pay-app:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,61,139,.35)}
 .upi-note{font-size:12px!important;color:#9f8ca9!important;margin-top:12px!important}
+<style>
+.member-count-box input{font-size:1rem;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.22);color:inherit;border-radius:10px;padding:12px 14px;box-sizing:border-box}
+</style>
 </style>
 
 <style>
@@ -335,6 +338,12 @@ body::before{
         <b>Accommodation Payment</b>
         <p class="muted">Please complete the accommodation payment using the UPI ID below.</p>
         <div class="upi-id" id="accommodationUpiDisplay">REPLACE_WITH_ACCOMMODATION_UPI_ID</div>
+        <div class="member-count-box" style="margin-top:14px">
+          <label for="accommodation_member_count"><b>Accommodation Member Count</b></label>
+          <input type="number" id="accommodation_member_count" name="accommodation_member_count" min="1" step="1" value="1" placeholder="Enter number of members" style="width:100%;margin-top:8px">
+          <small class="muted">Accommodation fee: ₹150 per head</small>
+          <div id="accommodationAmount" class="upi-id" style="margin-top:10px">Total Accommodation Amount: ₹150</div>
+        </div>
         <div class="accommodation-pay-options">
           <a class="pay-app" id="accomPhonePe" href="#" target="_blank" rel="noopener">PhonePe</a>
           <a class="pay-app" id="accomGPay" href="#" target="_blank" rel="noopener">Google Pay</a>
@@ -452,13 +461,31 @@ var UPI_VPA="",UPI_NAME="PLASMA 2K26"; var ACCOMMODATION_UPI_VPA="REPLACE_WITH_A
 function setupAccommodationPayment(){
   var vpa=ACCOMMODATION_UPI_VPA;
   var display=document.getElementById("accommodationUpiDisplay");
-  var upi="upi://pay?pa="+encodeURIComponent(vpa)+"&pn="+encodeURIComponent(ACCOMMODATION_UPI_NAME)+"&cu=INR";
-  if(display) display.textContent=vpa;
+  var countEl=document.getElementById("accommodation_member_count");
+  var amountEl=document.getElementById("accommodationAmount");
   var g=document.getElementById("accomGPay"),p=document.getElementById("accomPhonePe"),t=document.getElementById("accomPaytm"),u=document.getElementById("accomUPI");
-  if(g) g.href="tez://upi/pay?pa="+encodeURIComponent(vpa)+"&pn="+encodeURIComponent(ACCOMMODATION_UPI_NAME)+"&cu=INR";
-  if(p) p.href="phonepe://pay?pa="+encodeURIComponent(vpa)+"&pn="+encodeURIComponent(ACCOMMODATION_UPI_NAME)+"&cu=INR";
-  if(t) t.href="paytmmp://pay?pa="+encodeURIComponent(vpa)+"&pn="+encodeURIComponent(ACCOMMODATION_UPI_NAME)+"&cu=INR";
-  if(u) u.href=upi;
+  if(display) display.textContent=vpa;
+  function update(){
+    var count=Math.max(1,parseInt((countEl&&countEl.value)||1,10)||1);
+    var amount=count*150;
+    if(amountEl) amountEl.textContent="Total Accommodation Amount: ₹"+amount+" (₹150 × "+count+" member"+(count===1?"":"s")+")";
+    var params="pa="+encodeURIComponent(vpa)+"&pn="+encodeURIComponent(ACCOMMODATION_UPI_NAME)+"&am="+amount+"&cu=INR&tn="+encodeURIComponent("PLASMA2K26 Accommodation - "+count+" member(s)");
+    if(g) g.href="tez://upi/pay?"+params;
+    if(p) p.href="phonepe://pay?"+params;
+    if(t) t.href="paytmmp://pay?"+params;
+    if(u) u.href="upi://pay?"+params;
+  }
+  if(countEl) countEl.addEventListener("input",update);
+  [g,p,t,u].forEach(function(btn){
+    if(btn) btn.addEventListener("click",function(ev){
+      update();
+      if(!vpa || vpa.indexOf("REPLACE_WITH_")===0){
+        ev.preventDefault();
+        alert("Accommodation UPI ID is not configured yet.");
+      }
+    });
+  });
+  update();
 }
 
 var SAMPLE=[
@@ -571,7 +598,7 @@ document.getElementById("event-list").addEventListener("click",function(ev){
  var card=ev.target.closest("[data-open]");if(card){document.getElementById("f_event").value=card.dataset.open;updatePay();document.getElementById("register").scrollIntoView({behavior:"smooth"})}
 });
 document.getElementById("rf").addEventListener("submit",async function(ev){ev.preventDefault();
- var m=document.getElementById("msg"),body={event_id:+document.getElementById("f_event").value,name:f_name.value.trim(),email:f_email.value.trim(),phone:f_phone.value.trim(),college:f_college.value.trim(),team_members:f_team.value.trim(),payment_ref:f_payref.value.trim(),accommodation_required:(document.querySelector('input[name="accommodation"]:checked')||{}).value||null,accommodation_utr:(document.getElementById("accommodation_utr")||{}).value||null};
+ var m=document.getElementById("msg"),body={event_id:+document.getElementById("f_event").value,name:f_name.value.trim(),email:f_email.value.trim(),phone:f_phone.value.trim(),college:f_college.value.trim(),team_members:f_team.value.trim(),payment_ref:f_payref.value.trim(),accommodation_required:(document.querySelector('input[name="accommodation"]:checked')||{}).value||null,accommodation_member_count:parseInt((document.getElementById("accommodation_member_count")||{}).value||"0",10)||null,accommodation_utr:(document.getElementById("accommodation_utr")||{}).value||null};
  if(!live){m.textContent="Demo mode: add your Supabase URL and key to save registrations.";return}
  try{var r=await fetch(SB_URL+"/rest/v1/registrations",{method:"POST",headers:Object.assign(hdr(),{Prefer:"return=minimal"}),body:JSON.stringify(body)});
  m.textContent=r.ok?"Registered! See you at PLASMA 2K26.":(r.status===409?"You are already registered for this event.":"Something went wrong. Please try again.");if(r.ok)this.reset()}
@@ -614,8 +641,7 @@ document.addEventListener("change", function(e){
         if(accommodationVpa && accommodationVpa.indexOf("REPLACE_WITH_") !== 0){
           payBtn.href = "upi://pay?pa=" + encodeURIComponent(accommodationVpa) +
             "&pn=" + encodeURIComponent("PLASMA 2K26 Accommodation");
-          // Open the second payment route only after YES is selected.
-          setTimeout(function(){ window.location.href = payBtn.href; }, 250);
+          // Payment app buttons below handle the accommodation payment redirect.
         }else{
           payBtn.href = "#";
           payBtn.textContent = "Accommodation UPI ID Pending";
