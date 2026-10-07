@@ -200,7 +200,7 @@ body::before{
 .upi-note{font-size:12px!important;color:#9f8ca9!important;margin-top:12px!important}
 <style>
 .member-count-box input{font-size:1rem;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.22);color:inherit;border-radius:10px;padding:12px 14px;box-sizing:border-box}
-.status-chip{display:inline-flex;align-items:center;gap:8px}.status-dot{width:9px;height:9px;border-radius:50%;background:#22c55e;display:inline-block;box-shadow:0 0 0 3px rgba(34,197,94,.15),0 0 10px rgba(34,197,94,.8);animation:statusPulse 1.8s infinite}@keyframes statusPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.12)}}
+.status-chip{display:inline-flex;align-items:center;gap:8px;position:relative;left:-10px}.status-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;flex:0 0 10px;box-shadow:0 0 0 3px rgba(34,197,94,.18),0 0 12px rgba(34,197,94,.95);animation:statusBlink .9s ease-in-out infinite}@keyframes statusBlink{0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 3px rgba(34,197,94,.18),0 0 12px rgba(34,197,94,.95)}50%{opacity:.25;transform:scale(.78);box-shadow:0 0 0 5px rgba(34,197,94,.06),0 0 3px rgba(34,197,94,.35)}}
 </style>
 </style>
 
@@ -338,7 +338,7 @@ body::before{
       <div class="paybox">
         <b>Accommodation Payment</b>
         <p class="muted">Please complete the accommodation payment using the UPI ID below.</p>
-        <div class="upi-id" id="accommodationUpiDisplay">9380795731-2@axl</div>
+        <div class="upi-id" id="accommodationUpiDisplay">REPLACE_WITH_ACCOMMODATION_UPI_ID</div>
         <div class="member-count-box" style="margin-top:14px">
           <label for="accommodation_member_count"><b>Accommodation Member Count</b></label>
           <input type="number" id="accommodation_member_count" name="accommodation_member_count" min="1" step="1" value="1" placeholder="Enter number of members" style="width:100%;margin-top:8px">
@@ -458,7 +458,7 @@ if(!still&&x)draw();
 // ===== SUPABASE CONFIG: replace with your own values =====
 var SB_URL="https://ovuvtarrhfoyekbpppwh.supabase.co",SB_KEY="sb_publishable_Z6dLzghS7u2xUjOy93BxwQ_R2QhWikq";
 // ===== UPI CONFIG: paste your real UPI ID (VPA) between the quotes below, e.g. "plasma2k26@okhdfcbank" =====
-var UPI_VPA="",UPI_NAME="PLASMA 2K26"; var ACCOMMODATION_UPI_VPA="REPLACE_WITH_ACCOMMODATION_UPI_ID",ACCOMMODATION_UPI_NAME="PLASMA 2K26 Accommodation";
+var UPI_VPA="",UPI_NAME="PLASMA 2K26"; var ACCOMMODATION_UPI_VPA="9380795731-2@axl",ACCOMMODATION_UPI_NAME="PLASMA 2K26 Accommodation";
 function setupAccommodationPayment(){
   var vpa=ACCOMMODATION_UPI_VPA;
   var display=document.getElementById("accommodationUpiDisplay");
