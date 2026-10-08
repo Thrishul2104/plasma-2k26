@@ -194,12 +194,12 @@ body::before{
 .bmid>span:not(.status-chip){display:block;margin-top:4px;color:var(--mu);font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
 @media(max-width:700px){.blogo small{font-size:6px;letter-spacing:.55px}.bmid b{font-size:clamp(10px,3.2vw,16px);letter-spacing:0}.bmid>span:not(.status-chip){font-size:7px;letter-spacing:.8px}}
 
-.accommodation-pay-options{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}
-.accommodation-pay-options .pay-app{flex:1 1 150px;min-width:140px;text-align:center;padding:11px 14px;border-radius:8px;text-decoration:none;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--mag),var(--vio));transition:.25s}
-.accommodation-pay-options .pay-app:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,61,139,.35)}
-.upi-note{font-size:12px!important;color:#9f8ca9!important;margin-top:12px!important}
+
+
+
+
 <style>
-.member-count-box input{font-size:1rem;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.22);color:inherit;border-radius:10px;padding:12px 14px;box-sizing:border-box}
+
 .status-chip{display:inline-flex;align-items:center;gap:8px;position:relative;left:-10px}.status-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;flex:0 0 10px;box-shadow:0 0 0 3px rgba(34,197,94,.18),0 0 12px rgba(34,197,94,.95);animation:statusBlink .9s ease-in-out infinite}@keyframes statusBlink{0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 3px rgba(34,197,94,.18),0 0 12px rgba(34,197,94,.95)}50%{opacity:.25;transform:scale(.78);box-shadow:0 0 0 5px rgba(34,197,94,.06),0 0 3px rgba(34,197,94,.35)}}
 </style>
 </style>
@@ -212,10 +212,10 @@ body::before{
 .accommodation-option input{width:20px;height:20px;accent-color:#e0b04a}
 .accommodation-option span{display:flex;flex-direction:column;gap:4px}
 .accommodation-option small{color:#bcaec4;font-size:12px}
-.accommodation-payment{margin-top:20px}
-.accommodation-payment .paybox{padding:20px;border:1px solid rgba(224,176,74,.28);border-radius:16px;background:linear-gradient(135deg,rgba(224,176,74,.08),rgba(255,61,139,.06))}
-.upi-id{display:inline-block;margin:10px 0 16px;padding:10px 14px;border-radius:10px;background:rgba(0,0,0,.22);font-weight:700;letter-spacing:.4px}
-.small{font-size:12px}
+
+
+
+
 @media(max-width:700px){.accommodation-options{grid-template-columns:1fr}}
 </style>
 
@@ -275,10 +275,10 @@ body::before{
 <h2>About JNNCE</h2>
 <p class="about rv">Jawaharlal Nehru New College of Engineering (JNNCE), Shivamogga, is an engineering institution affiliated to Visvesvaraya Technological University (VTU), Belagavi. PLASMA 2K26 is hosted on its campus on Savalanga Road, Navule, bringing together students, coordinators and faculty from across departments to run the fest.</p>
 <div class="about-shots rv">
-<img src="images/gallery/1.jpg" alt="JNNCE campus during a PLASMA fest" loading="lazy" data-base="images/gallery/1" data-i="0" onerror="imgNext(this)">
-<img src="images/gallery/2.jpg" alt="Students at JNNCE taking part in a fest activity" loading="lazy" data-base="images/gallery/2" data-i="0" onerror="imgNext(this)">
-<img src="images/gallery/3.jpg" alt="JNNCE event space set up for PLASMA" loading="lazy" data-base="images/gallery/3" data-i="0" onerror="imgNext(this)">
-<img src="images/gallery/4.jpg" alt="A past PLASMA event held at JNNCE" loading="lazy" data-base="images/gallery/4" data-i="0" onerror="imgNext(this)">
+<img src="images/gallery/1.jpg" alt="JNNCE campus during a PLASMA fest" loading="lazy" data-base="images/gallery/1" data-i="0" data-about-fallback="0" onerror="aboutImgFallback(this)">
+<img src="images/gallery/2.jpg" alt="Students at JNNCE taking part in a fest activity" loading="lazy" data-base="images/gallery/2" data-i="0" data-about-fallback="1" onerror="aboutImgFallback(this)">
+<img src="images/gallery/3.jpg" alt="JNNCE event space set up for PLASMA" loading="lazy" data-base="images/gallery/3" data-i="0" data-about-fallback="2" onerror="aboutImgFallback(this)">
+<img src="images/gallery/4.jpg" alt="A past PLASMA event held at JNNCE" loading="lazy" data-base="images/gallery/4" data-i="0" data-about-fallback="3" onerror="aboutImgFallback(this)">
 </div>
 </section>
 
@@ -286,14 +286,14 @@ body::before{
 <h2>Some Glimpses of PLASMA</h2>
 <p class="about rv">PLASMA 2K26 is the flagship technical fest of Jawaharlal Nehru New College of Engineering (JNNCE), Shivamogga. Step through the gate, take on technical challenges, pitch your ideas, and compete for cash prizes alongside students from across the country.</p>
 <div class="about-shots rv" id="aboutShots">
-<img src="images/about/a1.jpg" alt="Faculty viewing a foam-walled maze arena" loading="lazy">
-<img src="images/about/a2.jpg" alt="Judges watching a robot in an outdoor arena" loading="lazy">
-<img src="images/about/a3.jpg" alt="Team watching a line follower robot on its track" loading="lazy">
-<img src="images/about/a4.jpg" alt="Participants gathered around a line follower mat" loading="lazy">
-<img src="images/about/a5.jpg" alt="Wheeled robot on a tiled arena floor" loading="lazy">
-<img src="images/about/a6.jpg" alt="Climbing robot at a brick obstacle" loading="lazy">
-<img src="images/about/a7.jpg" alt="Judges scoring a line follower run" loading="lazy">
-<img src="images/about/a8.jpg" alt="Tyre-lined robotics arena with spectators" loading="lazy">
+<img src="images/about/a1.jpg" data-about-fallback="0" onerror="aboutImgFallback(this)" alt="Faculty viewing a foam-walled maze arena" loading="lazy" data-base="images/about/a1" data-i="0">
+<img src="images/about/a2.jpg" data-about-fallback="1" onerror="aboutImgFallback(this)" alt="Judges watching a robot in an outdoor arena" loading="lazy" data-base="images/about/a2" data-i="0">
+<img src="images/about/a3.jpg" data-about-fallback="2" onerror="aboutImgFallback(this)" alt="Team watching a line follower robot on its track" loading="lazy" data-base="images/about/a3" data-i="0">
+<img src="images/about/a4.jpg" data-about-fallback="3" onerror="aboutImgFallback(this)" alt="Participants gathered around a line follower mat" loading="lazy" data-base="images/about/a4" data-i="0">
+<img src="images/about/a5.jpg" data-about-fallback="4" onerror="aboutImgFallback(this)" alt="Wheeled robot on a tiled arena floor" loading="lazy" data-base="images/about/a5" data-i="0">
+<img src="images/about/a6.jpg" data-about-fallback="5" onerror="aboutImgFallback(this)" alt="Climbing robot at a brick obstacle" loading="lazy" data-base="images/about/a6" data-i="0">
+<img src="images/about/a7.jpg" data-about-fallback="6" onerror="aboutImgFallback(this)" alt="Judges scoring a line follower run" loading="lazy" data-base="images/about/a7" data-i="0">
+<img src="images/about/a8.jpg" data-about-fallback="7" onerror="aboutImgFallback(this)" alt="Tyre-lined robotics arena with spectators" loading="lazy" data-base="images/about/a8" data-i="0">
 </div>
 </section>
 
@@ -320,21 +320,30 @@ body::before{
   <div class="card">
     <div class="eyebrow">TEAM SERVICES</div>
     <h2>Accommodation Required?</h2>
-    <p class="muted">Select an option below. If you select YES, the accommodation registration Google Form will be displayed below. If you select NO, the accommodation section will remain closed.</p>
+    <p class="muted">Select YES if you require accommodation. If YES is selected, use the Google Form below to submit your accommodation details.</p>
 
     <div class="accommodation-options">
       <label class="accommodation-option">
-        <input type="checkbox" name="accommodation" value="true" id="accommodation_yes">
+        <input type="checkbox" name="accommodation" value="YES" id="accommodation_yes">
         <span><b>YES</b><small>Accommodation required</small></span>
       </label>
-
       <label class="accommodation-option">
-        <input type="checkbox" name="accommodation" value="false" id="accommodation_no">
-        <span><b>NO</b><small>No accommodation required</small></span>
+        <input type="checkbox" name="accommodation" value="NO" id="accommodation_no">
+        <span><b>NO</b><small>Accommodation not required</small></span>
       </label>
     </div>
 
-    
+    <div id="accommodationGoogleForm" class="accommodation-google-form hide" style="margin-top:20px;text-align:center">
+      <p class="muted" style="margin-bottom:12px">Please complete the accommodation registration form:</p>
+      <a id="accommodationGoogleFormLink"
+         class="btn"
+         href="#"
+         target="_blank"
+         rel="noopener noreferrer">Accommodation Registration Google Form ↗</a>
+    </div>
+  </div>
+</div>
+
 
 <div class="payment-card rv" style="margin:18px 0 0">
   <h3>Event Payment</h3>
@@ -417,38 +426,8 @@ if(!still&&x)draw();
 // ===== SUPABASE CONFIG: replace with your own values =====
 var SB_URL="https://ovuvtarrhfoyekbpppwh.supabase.co",SB_KEY="sb_publishable_Z6dLzghS7u2xUjOy93BxwQ_R2QhWikq";
 // ===== UPI CONFIG: paste your real UPI ID (VPA) between the quotes below, e.g. "plasma2k26@okhdfcbank" =====
-var UPI_VPA="",UPI_NAME="PLASMA 2K26"; var ACCOMMODATION_UPI_VPA="9380795731-2@axl",ACCOMMODATION_UPI_NAME="PLASMA 2K26 Accommodation";
+var UPI_VPA="",UPI_NAME="PLASMA 2K26";
 var ACCOMMODATION_GOOGLE_FORM_URL="YOUR_GOOGLE_FORM_LINK_HERE";
-function setupAccommodationPayment(){
-  var vpa=ACCOMMODATION_UPI_VPA;
-  var display=document.getElementById("accommodationUpiDisplay");
-  var countEl=document.getElementById("accommodation_member_count");
-  var amountEl=document.getElementById("accommodationAmount");
-  var g=document.getElementById("accomGPay"),p=document.getElementById("accomPhonePe"),t=document.getElementById("accomPaytm"),u=document.getElementById("accomUPI");
-  if(display) display.textContent=vpa;
-  function update(){
-    var count=Math.max(1,parseInt((countEl&&countEl.value)||1,10)||1);
-    var amount=count*150;
-    if(amountEl) amountEl.textContent="Total Accommodation Amount: ₹"+amount+" (₹150 × "+count+" member"+(count===1?"":"s")+")";
-    var params="pa="+encodeURIComponent(vpa)+"&pn="+encodeURIComponent(ACCOMMODATION_UPI_NAME)+"&am="+amount+"&cu=INR&tn="+encodeURIComponent("PLASMA2K26 Accommodation - "+count+" member(s)");
-    if(g) g.href="tez://upi/pay?"+params;
-    if(p) p.href="phonepe://pay?"+params;
-    if(t) t.href="paytmmp://pay?"+params;
-    if(u) u.href="upi://pay?"+params;
-  }
-  if(countEl) countEl.addEventListener("input",update);
-  [g,p,t,u].forEach(function(btn){
-    if(btn) btn.addEventListener("click",function(ev){
-      update();
-      if(!vpa || vpa.indexOf("REPLACE_WITH_")===0){
-        ev.preventDefault();
-        alert("Accommodation UPI ID is not configured yet.");
-      }
-    });
-  });
-  update();
-}
-
 var SAMPLE=[
 {id:1,name:"Line Follower",track:"Robotics",description:"Build an autonomous bot that follows the track line fastest.",event_date:"2026-10-27",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/line-follower.pdf"},
 {id:2,name:"Robo Race",track:"Robotics",description:"Navigate your bot through the obstacle track against the clock.",event_date:"2026-10-27",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/robo-race.pdf"},
@@ -469,6 +448,22 @@ var ICONS={
  gen:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><path d="M12 3 3 7.5l9 4.5 9-4.5Z"/><path d="M3 12l9 4.5 9-4.5M3 16.5 12 21l9-4.5"/></svg>',
  tug:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><path d="M2 12h8m4 0h8"/><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="12" r="2.4"/><path d="m9 9 1.5 3L9 15M15 9l-1.5 3L15 15"/></svg>'
 };
+var ABOUT_FALLBACKS=[
+  "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#17122b"/><stop offset="1" stop-color="#35153d"/></linearGradient></defs><rect width="900" height="600" fill="url(#g)"/><circle cx="700" cy="140" r="95" fill="#ff3d8b" opacity=".18"/><rect x="130" y="170" width="640" height="300" rx="28" fill="#111827" stroke="#ff3d8b" stroke-width="5"/><rect x="205" y="245" width="490" height="125" rx="18" fill="#20283a"/><circle cx="300" cy="307" r="34" fill="#e0b04a"/><circle cx="600" cy="307" r="34" fill="#e0b04a"/><path d="M360 307h180M450 210v-55M420 155h60" stroke="#ff3d8b" stroke-width="12" stroke-linecap="round"/><text x="450" y="535" text-anchor="middle" fill="#fff" font-family="Arial" font-size="34" font-weight="700">PLASMA 2K26 • JNNCE</text></svg>'),
+  "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><rect width="900" height="600" fill="#111827"/><path d="M0 470L900 250V600H0Z" fill="#1e293b"/><path d="M90 430h720" stroke="#e0b04a" stroke-width="8" stroke-dasharray="28 20"/><rect x="270" y="250" width="360" height="140" rx="25" fill="#263044" stroke="#ff3d8b" stroke-width="6"/><circle cx="340" cy="405" r="44" fill="#0b1020" stroke="#e0b04a" stroke-width="8"/><circle cx="560" cy="405" r="44" fill="#0b1020" stroke="#e0b04a" stroke-width="8"/><path d="M350 250l55-90h90l55 90M450 160V105" fill="none" stroke="#ff3d8b" stroke-width="12" stroke-linecap="round"/><text x="450" y="525" text-anchor="middle" fill="#fff" font-family="Arial" font-size="34" font-weight="700">ROBOTICS • TECH FEST</text></svg>'),
+  "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><rect width="900" height="600" fill="#151124"/><path d="M110 510V190h680v320" fill="none" stroke="#ff3d8b" stroke-width="8"/><path d="M180 450c100-220 190 160 290-50s180-120 250-20" fill="none" stroke="#e0b04a" stroke-width="18" stroke-linecap="round"/><circle cx="450" cy="320" r="72" fill="#22263a" stroke="#ff3d8b" stroke-width="8"/><circle cx="425" cy="310" r="12" fill="#fff"/><circle cx="475" cy="310" r="12" fill="#fff"/><path d="M425 350q25 20 50 0" fill="none" stroke="#e0b04a" stroke-width="8" stroke-linecap="round"/><text x="450" y="555" text-anchor="middle" fill="#fff" font-family="Arial" font-size="34" font-weight="700">INNOVATION • JNNCE</text></svg>'),
+  "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><defs><radialGradient id="g"><stop stop-color="#422044"/><stop offset="1" stop-color="#0b1020"/></radialGradient></defs><rect width="900" height="600" fill="url(#g)"/><g fill="none" stroke="#ff3d8b" stroke-width="7"><path d="M80 480h740M150 410h600M230 340h440M310 270h280"/><path d="M170 480V150M730 480V150"/></g><circle cx="450" cy="230" r="82" fill="#182033" stroke="#e0b04a" stroke-width="10"/><path d="M405 230h90M450 185v90" stroke="#ff3d8b" stroke-width="12" stroke-linecap="round"/><text x="450" y="555" text-anchor="middle" fill="#fff" font-family="Arial" font-size="34" font-weight="700">PLASMA 2K26</text></svg>')
+];
+function aboutImgFallback(img){
+  var extIndex=parseInt(img.dataset.i||"0",10);
+  var exts=["jpg","jpeg","png","webp"];
+  if(extIndex<exts.length-1){
+    extIndex++; img.dataset.i=String(extIndex); img.src=img.dataset.base+"."+exts[extIndex]; return;
+  }
+  var i=parseInt(img.getAttribute("data-about-fallback")||"0",10)%ABOUT_FALLBACKS.length;
+  if(img.dataset.fallbackDone)return;
+  img.dataset.fallbackDone="1"; img.onerror=null; img.src=ABOUT_FALLBACKS[i];
+}
 var GALLERY=["images/gallery/1","images/gallery/2","images/gallery/3","images/gallery/4","images/gallery/5","images/gallery/6","images/gallery/7","images/gallery/8"];
 var EXTS=["jpg","jpeg","png","webp"];
 window.imgNext=function(img){var i=(+img.dataset.i||0)+1;if(i<EXTS.length){img.dataset.i=i;img.src=img.dataset.base+"."+EXTS[i]}else{img.onerror=null;var f=img.closest("figure");(f||img).remove()}};
@@ -552,12 +547,12 @@ document.getElementById("event-list").addEventListener("click",function(ev){
  var card=ev.target.closest("[data-open]");if(card){document.getElementById("f_event").value=card.dataset.open;updatePay();document.getElementById("register").scrollIntoView({behavior:"smooth"})}
 });
 document.getElementById("rf").addEventListener("submit",async function(ev){ev.preventDefault();
- var m=document.getElementById("msg"),body={event_id:+document.getElementById("f_event").value,name:f_name.value.trim(),email:f_email.value.trim(),phone:f_phone.value.trim(),college:f_college.value.trim(),team_members:f_team.value.trim(),payment_ref:f_payref.value.trim(),accommodation_required:(typeof getAccommodationRequired==="function"?getAccommodationRequired():null),accommodation_member_count:(typeof getAccommodationRequired==="function"&&getAccommodationRequired()===true)?(parseInt((document.getElementById("accommodation_member_count")||{}).value||"0",10)||null):null,accommodation_amount:(typeof getAccommodationRequired==="function"&&getAccommodationRequired()===true)?((parseInt((document.getElementById("accommodation_member_count")||{}).value||"0",10)||0)*150):null,accommodation_utr:(typeof getAccommodationRequired==="function"&&getAccommodationRequired()===true)?((document.getElementById("accommodation_utr")||{}).value||null):null};
+  var m=document.getElementById("msg"),body={event_id:+document.getElementById("f_event").value,name:document.getElementById("f_name").value.trim(),email:document.getElementById("f_email").value.trim(),phone:document.getElementById("f_phone").value.trim(),college:document.getElementById("f_college").value.trim(),team_members:document.getElementById("f_team").value.trim(),payment_ref:document.getElementById("f_payref").value.trim(),accommodation_required:(typeof getAccommodationRequired==="function"?getAccommodationRequired():null)};
  if(!live){m.textContent="Demo mode: add your Supabase URL and key to save registrations.";return}
  try{var r=await fetch(SB_URL+"/rest/v1/registrations",{method:"POST",headers:Object.assign(hdr(),{Prefer:"return=minimal"}),body:JSON.stringify(body)});
  m.textContent=r.ok?"Registered! See you at PLASMA 2K26.":(r.status===409?"You are already registered for this event.":"Something went wrong. Please try again.");if(r.ok)this.reset()}
  catch(e){m.textContent="Network error. Please try again."}});
-setupAccommodationPayment();loadEvents();buildGallery();
+loadEvents();buildGallery();
 var as=document.getElementById("aboutShots");if(as)as.addEventListener("click",function(ev){var im=ev.target.closest("img");if(!im)return;openPicture(im.src,im.alt||"PLASMA 2K26 photo")});
 var q=new URLSearchParams(location.search).get("event");
 if(q){setTimeout(function(){var f=document.getElementById("f_event");f.value=q;updatePay();document.getElementById("register").scrollIntoView()},600)}
@@ -579,57 +574,34 @@ document.addEventListener("change", function(e){
 (function(){
   var yes=document.getElementById("accommodation_yes");
   var no=document.getElementById("accommodation_no");
-  var box=document.getElementById("accommodationPayment");
-  var formLink=document.getElementById("accommodationGoogleForm");
-  var formUrl=(typeof ACCOMMODATION_GOOGLE_FORM_URL !== "undefined") ? ACCOMMODATION_GOOGLE_FORM_URL : "";
-
-  function updateAccommodationUI(){
-    if(!yes || !no) return;
-    var required=yes.checked;
-    if(box) box.classList.toggle("hide", !required);
-    if(formLink){
-      if(required && formUrl && formUrl.indexOf("YOUR_GOOGLE_FORM") !== 0){
-        formLink.href=formUrl;
-        formLink.style.display="inline-block";
-      }else if(required){
-        formLink.href="#";
-        formLink.style.display="inline-block";
-        formLink.textContent="Add Google Form Link";
-      }else{
-        formLink.href="#";
-        formLink.style.display="none";
-      }
+  var box=document.getElementById("accommodationGoogleForm");
+  var link=document.getElementById("accommodationGoogleFormLink");
+  var formUrl=(typeof ACCOMMODATION_GOOGLE_FORM_URL!=="undefined")?String(ACCOMMODATION_GOOGLE_FORM_URL).trim():"";
+  function updateAccommodation(){
+    if(!yes||!no)return;
+    if(yes.checked) no.checked=false;
+    if(no.checked) yes.checked=false;
+    var required=!!yes.checked;
+    if(box) box.classList.toggle("hide",!required);
+    if(link){
+      var valid=formUrl && formUrl.indexOf("YOUR_GOOGLE_FORM")!==0;
+      link.style.display=required?"inline-block":"none";
+      link.href=valid?formUrl:"#";
+      link.textContent=valid?"Accommodation Registration Google Form ↗":"Add Google Form Link";
+      link.target="_blank";
+      link.rel="noopener noreferrer";
     }
   }
-  window.updateAccommodationUI=updateAccommodationUI;
-  window.getAccommodationRequired=function(){
-    if(yes && yes.checked) return true;
-    if(no && no.checked) return false;
-    return null;
-  };
-  updateAccommodationUI();
-})();
-</script>
-
-
-
-
-
-
-
-<script>
-(function(){
-  var form=document.getElementById("rf");
-  if(!form) return;
-  form.addEventListener("submit",function(e){
-    var req=(typeof getAccommodationRequired==="function")?getAccommodationRequired():null;
-    if(req===null){e.preventDefault();var m=document.getElementById("msg");if(m)m.textContent="Please select YES or NO for accommodation.";return;}
-    if(req===true){
-      var count=document.getElementById("accommodation_member_count"), utr=document.getElementById("accommodation_utr");
-      if(!count || !parseInt(count.value,10) || parseInt(count.value,10)<1){e.preventDefault();if(count)count.focus();var m=document.getElementById("msg");if(m)m.textContent="Please enter the accommodation member count.";return;}
-      if(!utr || !utr.value.trim()){e.preventDefault();if(utr)utr.focus();var m2=document.getElementById("msg");if(m2)m2.textContent="Please enter the accommodation payment UTR number.";return;}
-    }
-  },true);
+  yes&&yes.addEventListener("change",updateAccommodation);
+  no&&no.addEventListener("change",updateAccommodation);
+  link&&link.addEventListener("click",function(ev){
+    var url=(typeof ACCOMMODATION_GOOGLE_FORM_URL!=="undefined")?String(ACCOMMODATION_GOOGLE_FORM_URL).trim():"";
+    if(!url || url.indexOf("YOUR_GOOGLE_FORM")===0){ev.preventDefault();alert("Please add your Google Form URL in ACCOMMODATION_GOOGLE_FORM_URL in the HTML file.");return;}
+    ev.preventDefault();window.open(url,"_blank","noopener,noreferrer");
+  });
+  window.getAccommodationRequired=function(){return yes&&yes.checked?true:(no&&no.checked?false:null)};
+  window.updateAccommodationUI=updateAccommodation;
+  updateAccommodation();
 })();
 </script>
 </body>
