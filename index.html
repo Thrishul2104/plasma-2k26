@@ -84,6 +84,8 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--mag);box
 
 .eicon{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,rgba(255,61,139,.18),rgba(155,92,255,.18));display:flex;align-items:center;justify-content:center;margin-bottom:12px}
 .eicon svg{width:30px;height:30px}
+.ev .coord{font-size:13px;color:var(--mu);margin-top:6px}
+.ev .coord a{color:var(--gold);text-decoration:none}
 .poolwrap{text-align:center;margin:6px 0 30px}
 .poolwrap b{display:block;font-size:15px;color:var(--mu);letter-spacing:1px;text-transform:uppercase}
 .poolwrap span{font-size:30px;color:var(--gold);font-weight:700}
@@ -91,19 +93,29 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--mag);box
 .qrwrap{text-align:center}
 .qrwrap p{color:var(--mu)}
 
+.brandbar{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(150px,1fr) minmax(280px,2fr) minmax(150px,1fr);align-items:center;gap:22px;padding:18px 4.5% 20px;
+ border:1px solid rgba(224,176,74,.45);border-radius:0 0 24px 24px;
+ background:linear-gradient(135deg,rgba(9,5,18,.97),rgba(28,9,39,.96) 48%,rgba(9,5,18,.97));
+ box-shadow:0 10px 40px rgba(0,0,0,.45),inset 0 -1px 0 rgba(255,255,255,.08);
+ animation:panelBorder 7s linear infinite}
 @keyframes panelBorder{to{background-position:0 0,-300% 0}}
 .brandbar:before{content:"";position:absolute;inset:-40%;background:radial-gradient(circle at 20% 30%,rgba(255,61,139,.16),transparent 55%),radial-gradient(circle at 80% 70%,rgba(155,92,255,.16),transparent 55%),radial-gradient(circle at 50% 50%,rgba(224,176,74,.08),transparent 60%);animation:brandDrift 12s ease-in-out infinite alternate;pointer-events:none}
 @keyframes brandDrift{from{transform:translate(-3%,-2%) scale(1)}to{transform:translate(3%,2%) scale(1.08)}}
 .brandbar:after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(224,176,74,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(224,176,74,.07) 1px,transparent 1px);background-size:16px 16px;opacity:.5}
+.status-chip{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:10px;letter-spacing:2px;color:#8ee6a8;text-transform:uppercase}
+.status-dot{width:6px;height:6px;border-radius:50%;background:#4ef08a;box-shadow:0 0 6px #4ef08a;animation:statusPulse 1.6s ease-in-out infinite}
 @keyframes statusPulse{50%{opacity:.35;box-shadow:0 0 2px #4ef08a}}
+.blogo{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;padding:10px 14px;min-height:126px;justify-content:center;border:1px solid rgba(224,176,74,.18);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 8px 24px rgba(0,0,0,.18);animation:inL 1s .1s both}
 .blogo.right{animation-name:inR}
 @keyframes inL{from{opacity:0;transform:translateX(-40px)}}
 @keyframes inR{from{opacity:0;transform:translateX(40px)}}
+.lg{width:clamp(70px,9vw,94px);height:clamp(70px,9vw,94px);border-radius:50%;background:#fff;padding:8px;border:2px solid var(--gold);display:grid;place-items:center;overflow:hidden;box-shadow:0 0 0 5px rgba(224,176,74,.09),0 0 30px rgba(255,61,139,.28);animation:ring 3.5s ease-in-out infinite;transition:transform .35s}
 .lg:hover{transform:scale(1.08) rotate(-3deg)}
 @keyframes ring{50%{box-shadow:0 0 0 7px rgba(224,176,74,.08),0 0 38px rgba(155,92,255,.55)}}
 .lg img{width:100%;height:100%;object-fit:contain;display:block}
 .lg .fb{display:none;place-items:center;width:100%;height:100%;font-weight:800;color:#1a1220;letter-spacing:1px}
 .blogo small{font-size:10px;line-height:1.35;letter-spacing:1.3px;color:#d8c7df;text-transform:uppercase;text-align:center;font-weight:600}
+.bmid{text-align:center;animation:up 1s .3s both;padding:12px 20px;border-left:1px solid rgba(224,176,74,.18);border-right:1px solid rgba(224,176,74,.18)}
 .bmid b{display:block;font-family:Georgia,serif;font-size:clamp(15px,2.5vw,27px);line-height:1.18;letter-spacing:1px;background:linear-gradient(90deg,var(--gold),var(--mag),var(--vio),var(--gold));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:bmidShine 5s linear infinite}
 @keyframes bmidShine{to{background-position:-300% 0}}
 .bmid span{display:block;font-size:clamp(10px,1.6vw,13px);color:var(--mu);letter-spacing:2px;text-transform:uppercase;margin-top:2px}
@@ -131,6 +143,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--mag);box
 .lg .fb{font-size:12px}
 @media(max-width:600px){
  .blogo small{display:none}
+ .brandbar{gap:10px;padding:12px 4% 14px;grid-template-columns:auto 1fr auto}
  .hero{padding:80px 5% 60px}
  .hero h1{letter-spacing:3px}
  section{padding:46px 5%}
@@ -148,7 +161,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--mag);box
  section{padding:60px 5%}
  .hero{padding:90px 5% 70px}
 }
-@media(max-width:700px){.blogo small{font-size:7px;letter-spacing:.8px}.bmid b{font-size:clamp(11px,3.2vw,17px);letter-spacing:.5px}.bmid span{font-size:8px;letter-spacing:1px}}
+@media(max-width:700px){.brandbar{grid-template-columns:1fr 1.4fr 1fr;gap:6px;padding:12px 8px 14px;border-radius:0 0 18px 18px}.blogo{min-height:100px;padding:7px 4px}.lg{width:58px;height:58px;padding:5px}.blogo small{font-size:7px;letter-spacing:.8px}.bmid{padding:6px 8px}.bmid b{font-size:clamp(11px,3.2vw,17px);letter-spacing:.5px}.bmid span{font-size:8px;letter-spacing:1px}.status-chip{font-size:7px;letter-spacing:1px;margin-top:4px}.status-dot{width:5px;height:5px}}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 
 .payment-card{max-width:720px;margin:0 auto;text-align:center;background:var(--card);border:1px solid #6b2a44;border-radius:14px;padding:28px;box-shadow:0 12px 35px rgba(255,61,139,.12)}
@@ -157,7 +170,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--mag);box
 .payment-btn{display:inline-block;margin-top:8px;padding:13px 30px;border-radius:7px;text-decoration:none;font-weight:700;background:linear-gradient(90deg,var(--mag),var(--vio));color:#fff;transition:transform .25s,box-shadow .25s}
 .payment-btn:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(255,61,139,.5)}
 .payment-note{font-size:12px!important;color:#9f8ca9!important;margin-top:14px!important}
-.rulebook-wrap{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:14px;text-align:center}.rulebook-wrap .btn,.rulebook-wrap .rulebook-btn{margin-left:auto;margin-right:auto;text-align:center}
+.rulebook-wrap{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .rulebook-btn{display:inline-block;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;color:#fff;background:linear-gradient(90deg,var(--mag),var(--vio));transition:.25s}
 .rulebook-btn:hover{transform:translateY(-2px);box-shadow:0 7px 20px rgba(255,61,139,.35)}
 
@@ -185,70 +198,19 @@ body::before{
 
 
 /* Header matched to the main PLASMA page UI */
+.brandbar{display:grid;grid-template-columns:150px minmax(0,1fr) 150px;align-items:center;gap:18px;padding:14px 5%;position:relative;overflow:hidden;border:0;border-bottom:1px solid rgba(224,176,74,.22);border-radius:0;background:linear-gradient(180deg,rgba(10,4,16,.92),rgba(10,4,16,.62));box-shadow:0 8px 28px rgba(0,0,0,.22);animation:none}
 .brandbar:before{content:"";position:absolute;left:50%;bottom:-1px;transform:translateX(-50%);width:180px;height:2px;background:linear-gradient(90deg,transparent,var(--mag),var(--gold),var(--vio),transparent);box-shadow:0 0 18px rgba(255,61,139,.35);pointer-events:none}
+.blogo{min-height:0;padding:4px 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:0;border-radius:0;background:none;box-shadow:none;animation:none}
+.lg{width:76px;height:76px;padding:7px;border-radius:50%;background:#fff;border:2px solid var(--gold);box-shadow:0 0 18px rgba(224,176,74,.18),0 0 28px rgba(155,92,255,.12);animation:none;transition:transform .3s,box-shadow .3s}
 .lg:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 0 22px rgba(224,176,74,.3),0 0 34px rgba(255,61,139,.18)}
 .blogo small{font-size:9px;line-height:1.3;letter-spacing:1px;color:var(--mu);text-transform:uppercase;text-align:center;font-weight:600}
+.bmid{text-align:center;padding:4px 16px;border:0;animation:none}
 .bmid b{display:block;font-family:Georgia,serif;font-size:clamp(15px,2.35vw,25px);line-height:1.2;letter-spacing:.4px;background:linear-gradient(90deg,#fff,var(--gold),#fff);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none}
 .bmid>span:not(.status-chip){display:block;margin-top:4px;color:var(--mu);font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
-@media(max-width:700px){.blogo small{font-size:6px;letter-spacing:.55px}.bmid b{font-size:clamp(10px,3.2vw,16px);letter-spacing:0}.bmid>span:not(.status-chip){font-size:7px;letter-spacing:.8px}}
-
-.accommodation-pay-options{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}
-.accommodation-pay-options .pay-app{flex:1 1 150px;min-width:140px;text-align:center;padding:11px 14px;border-radius:8px;text-decoration:none;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--mag),var(--vio));transition:.25s}
-.accommodation-pay-options .pay-app:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,61,139,.35)}
-.upi-note{font-size:12px!important;color:#9f8ca9!important;margin-top:12px!important}
-<style>
-.member-count-box input{font-size:1rem;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.22);color:inherit;border-radius:10px;padding:12px 14px;box-sizing:border-box}
-.status-chip{display:inline-flex;align-items:center;gap:8px;position:relative;left:-10px}.status-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;flex:0 0 10px;box-shadow:0 0 0 3px rgba(34,197,94,.18),0 0 12px rgba(34,197,94,.95);animation:statusBlink .9s ease-in-out infinite}@keyframes statusBlink{0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 3px rgba(34,197,94,.18),0 0 12px rgba(34,197,94,.95)}50%{opacity:.25;transform:scale(.78);box-shadow:0 0 0 5px rgba(34,197,94,.06),0 0 3px rgba(34,197,94,.35)}}
-.coordinator-top{margin:20px auto 34px;max-width:1100px;padding:22px;border:1px solid #2a1638;border-radius:18px;background:rgba(20,10,30,.72);box-shadow:0 12px 35px rgba(0,0,0,.18)}
-.coordinator-top h2{text-align:center;margin:0 0 18px;color:var(--gold)}
-.coordinator-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.coordinator-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:16px;border:1px solid #3a204d;border-radius:14px;background:rgba(255,255,255,.035);text-align:center}
-.coordinator-card b{font-size:1rem}.coordinator-card a{color:var(--tx);text-decoration:none}.coordinator-card a:hover{text-decoration:underline}
-@media(max-width:700px){.coordinator-grid{grid-template-columns:1fr}}
+.status-chip{display:inline-flex!important;align-items:center;gap:6px;margin-top:7px;padding:3px 10px;border:1px solid rgba(255,61,139,.25);border-radius:999px;background:rgba(255,61,139,.06);color:#f5dce8!important;font-size:8px!important;letter-spacing:1.2px!important}
+.status-dot{width:6px;height:6px;border-radius:50%;background:#58e39b;box-shadow:0 0 9px rgba(88,227,155,.75);display:inline-block}
+@media(max-width:700px){.brandbar{grid-template-columns:72px minmax(0,1fr) 72px;gap:5px;padding:10px 8px 12px}.lg{width:54px;height:54px;padding:5px}.blogo small{font-size:6px;letter-spacing:.55px}.bmid{padding:2px 5px}.bmid b{font-size:clamp(10px,3.2vw,16px);letter-spacing:0}.bmid>span:not(.status-chip){font-size:7px;letter-spacing:.8px}.status-chip{font-size:6px!important;padding:2px 6px;margin-top:4px}.status-dot{width:4px;height:4px}}
 </style>
-</style>
-
-<style>
-.accommodation-section .card{position:relative;overflow:hidden}
-.accommodation-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:22px}
-.accommodation-option{display:flex;align-items:center;gap:14px;padding:18px 20px;border:1px solid rgba(224,176,74,.25);border-radius:16px;background:rgba(255,255,255,.035);cursor:pointer;transition:.25s}
-.accommodation-option:hover{transform:translateY(-2px);border-color:rgba(224,176,74,.65);background:rgba(255,255,255,.06)}
-.accommodation-option input{width:20px;height:20px;accent-color:#e0b04a}
-.accommodation-option span{display:flex;flex-direction:column;gap:4px}
-.accommodation-option small{color:#bcaec4;font-size:12px}
-.accommodation-payment{margin-top:20px}
-.accommodation-payment .paybox{padding:20px;border:1px solid rgba(224,176,74,.28);border-radius:16px;background:linear-gradient(135deg,rgba(224,176,74,.08),rgba(255,61,139,.06))}
-.upi-id{display:inline-block;margin:10px 0 16px;padding:10px 14px;border-radius:10px;background:rgba(0,0,0,.22);font-weight:700;letter-spacing:.4px}
-.small{font-size:12px}
-@media(max-width:700px){.accommodation-options{grid-template-columns:1fr}}
-</style>
-
-
-
-
-
-<style>
-.brandbar{position:relative;display:grid;grid-template-columns:minmax(110px,1fr) minmax(0,2.8fr) minmax(110px,1fr);align-items:center;width:100%;max-width:none;margin:0;padding:14px 18px 16px;border:1px solid rgba(224,176,74,.22);border-radius:0;background:rgba(255,255,255,.035);box-shadow:0 8px 28px rgba(0,0,0,.2);text-align:center;overflow:hidden}
-.brandbar .blogo{display:flex;align-items:center;gap:10px;min-width:0}
-.brandbar .blogo:first-child{justify-content:flex-start}
-.brandbar .blogo.right{justify-content:flex-end}
-.brandbar .lg{width:96px;height:96px;flex:0 0 96px;border-radius:22px;background:#fff;padding:7px;border:2px solid var(--gold);display:grid;place-items:center;overflow:hidden;box-shadow:0 0 0 4px rgba(224,176,74,.12),0 0 24px rgba(255,61,139,.22);clip-path:inset(0 round 22px)}
-.brandbar .bmid{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;padding:0 10px}
-.brandbar .bmid b{font-family:Georgia,serif;font-size:clamp(16px,2.25vw,27px);line-height:1.2;white-space:nowrap}
-.brandbar .bmid span{font-size:clamp(9px,1vw,12px);color:#cdbed4;letter-spacing:1.2px;white-space:nowrap}
-.brandbar .blogo small{display:none}
-@media(max-width:700px){.brandbar .lg{width:78px;height:78px;flex-basis:78px;border-radius:18px;padding:6px}.brandbar{grid-template-columns:64px 1fr 64px;gap:4px;padding:8px 7px}.brandbar .blogo:first-child{justify-content:flex-start}.brandbar .blogo.right{justify-content:flex-end}.brandbar .lg{width:56px;height:56px;flex-basis:56px;padding:4px}.brandbar .bmid{padding:0 3px}.brandbar .bmid b{font-size:11px;white-space:normal}.brandbar .bmid span{font-size:7px;letter-spacing:.5px;white-space:normal}.brandbar .status-chip{font-size:7px;letter-spacing:.8px}}
-
-.registration-container{max-width:920px;margin:0 auto;background:linear-gradient(180deg,rgba(22,10,31,.96),rgba(16,7,24,.96));border:1px solid #6b2a44;border-radius:18px;padding:28px;box-shadow:0 18px 45px rgba(0,0,0,.28),0 0 35px rgba(255,61,139,.08)}
-.registration-container form{max-width:none;margin:0;display:grid;gap:14px}
-.registration-container .accommodation-section{padding:0;margin:4px 0 0;max-width:none}
-.registration-container .accommodation-section>.card{background:rgba(10,4,16,.45);border-color:#3a1d4a;box-shadow:none}
-.registration-container .payment-card{max-width:none}
-.registration-container #f_payref{margin-top:2px}
-.registration-container .register-submit{width:100%;margin-top:4px}
-@media(max-width:700px){.registration-container{padding:18px;border-radius:14px}.brandbar{margin-bottom:12px}}
-</style>
-
 </head>
 <body>
 <div id="bar"></div>
@@ -274,15 +236,6 @@ body::before{
 <div class="stat"><b id="poolStat">₹ 1,00,000</b><span>Prize Pool</span></div>
 <div class="stat"><b>Open</b><span>To students across India</span></div>
 </div>
-
-<section id="coordinators" class="coordinator-top">
-<h2>Event Coordinators</h2>
-<div class="coordinator-grid">
-
-<div class="coordinator-card"><b>Vivek GK</b><a href="tel:+917411563037">74115 63037</a></div>
- <div class="coordinator-card"><b>Thrishul Kumar BS</b><a href="tel:+919380795731">93807 95731</a></div>
-<div class="coordinator-card"><b>Nimitha Sindhe</b><a href="tel:+919035316490">90353 16490</a></div>
-</div></section>
 
 <section id="college">
 <h2>About JNNCE</h2>
@@ -320,7 +273,6 @@ body::before{
 <section id="register">
 <h2>Register</h2>
 <p class="sub rv">Fill in your details, select an event, complete the payment, and submit your registration.</p>
-<div class="registration-container">
 <form id="rf">
 <select id="f_event" required><option value="">Select event</option></select>
 <input id="f_name" placeholder="Full name" required>
@@ -328,62 +280,6 @@ body::before{
 <input id="f_phone" placeholder="Phone number">
 <input id="f_college" placeholder="College">
 <textarea id="f_team" rows="2" placeholder="Team members (if any)"></textarea>
-
-<div id="accommodationSection" class="accommodation-section">
-  <div class="card">
-    <div class="eyebrow">TEAM SERVICES</div>
-    <h2>Accommodation Required?</h2>
-    <p class="muted">Select an option below. If accommodation is required, you will be redirected to the accommodation payment page.</p>
-
-    <div class="accommodation-options">
-      <label class="accommodation-option">
-        <input type="radio" name="accommodation" value="YES" id="accommodation_yes">
-        <span><b>YES</b><small>Accommodation required</small></span>
-      </label>
-
-      <label class="accommodation-option">
-        <input type="radio" name="accommodation" value="NO" id="accommodation_no">
-        <span><b>NO</b><small>No accommodation required</small></span>
-      </label>
-    </div>
-
-    <div id="accommodationPayment" class="accommodation-payment hide">
-      <div class="paybox">
-        <b>Accommodation Payment</b>
-        <p class="muted">Please complete the accommodation payment using the UPI ID below.</p>
-        <div class="upi-id" id="accommodationUpiDisplay">REPLACE_WITH_ACCOMMODATION_UPI_ID</div>
-        <div class="member-count-box" style="margin-top:14px">
-          <label for="accommodation_member_count"><b>Accommodation Member Count</b></label>
-          <input type="number" id="accommodation_member_count" name="accommodation_member_count" min="1" step="1" value="1" placeholder="Enter number of members" style="width:100%;margin-top:8px">
-          <small class="muted">Accommodation fee: ₹150 per head</small>
-          <div id="accommodationAmount" class="upi-id" style="margin-top:10px">Total Accommodation Amount: ₹150</div>
-        </div>
-        <div class="accommodation-pay-options">
-          <a class="pay-app" id="accomPhonePe" href="#" target="_blank" rel="noopener">PhonePe</a>
-          <a class="pay-app" id="accomGPay" href="#" target="_blank" rel="noopener">Google Pay</a>
-          <a class="pay-app" id="accomPaytm" href="#" target="_blank" rel="noopener">Paytm</a>
-          <a class="pay-app" id="accomUPI" href="#" target="_blank" rel="noopener">Other UPI Apps</a>
-        </div>
-        <p class="upi-note">Choose your preferred UPI app. If the selected app is not installed, use another option.</p>
-        
-<div class="accommodation-utr" style="margin-top:16px">
-  <label for="accommodation_utr"><b>Accommodation UTR / Transaction Reference No.</b></label>
-  <input
-    type="text"
-    id="accommodation_utr"
-    name="accommodation_utr"
-    placeholder="Enter accommodation payment UTR number"
-    autocomplete="off"
-    style="width:100%;margin-top:8px"
-  >
-  <small class="muted">Enter the UTR/reference number after completing the accommodation payment.</small>
-</div>
-
-<p class="muted small">After payment, enter the UTR/payment reference in the registration form.</p>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <div class="payment-card rv" style="margin:18px 0 0">
@@ -396,15 +292,10 @@ body::before{
   </a>
   <p class="payment-note">The payment page opens in a new tab. Complete the payment, return here, and enter your UPI Transaction ID / UTR below before submitting your registration.</p>
 </div>
-
-
-
-
 <input id="f_payref" placeholder="UPI Transaction ID / UTR (after payment)">
-<button class="btn register-submit" type="submit" style="border:0;cursor:pointer;margin:0">Submit Registration</button>
+<button class="btn" type="submit" style="border:0;cursor:pointer;margin:0">Submit Registration</button>
 <div id="msg"></div>
 </form>
-</div>
 </section>
 
 <div id="lb" class="hide" aria-hidden="true">
@@ -419,7 +310,11 @@ body::before{
 <iframe title="JNNCE Shimoga location" src="https://www.google.com/maps?q=Jawaharlal+Nehru+New+College+of+Engineering,+Savalanga+Road,+Navule,+Shimoga+577204&output=embed" width="100%" height="320" style="border:0;display:block" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 <p class="about rv" style="margin-top:16px"><a class="btn o" style="margin:0" href="https://www.google.com/maps/dir/?api=1&destination=Jawaharlal+Nehru+New+College+of+Engineering,+Savalanga+Road,+Navule,+Shimoga+577204" target="_blank" rel="noopener">Get Directions</a></p>
-
+<div class="about rv" style="margin-top:30px">
+<h3 style="color:var(--gold);font-family:Georgia,serif;font-weight:400;margin-bottom:10px">Event Coordinators</h3>
+<p style="margin:4px 0">📞 Thrishul Kumar BS &middot; <a href="tel:+919380795731" style="color:var(--tx);text-decoration:none">93807 95731</a></p>
+<p style="margin:4px 0">📞 Vivek GK &middot; <a href="tel:+917411563037" style="color:var(--tx);text-decoration:none">74115 63037</a></p>
+</div>
 </section>
 
 
@@ -467,37 +362,7 @@ if(!still&&x)draw();
 // ===== SUPABASE CONFIG: replace with your own values =====
 var SB_URL="https://ovuvtarrhfoyekbpppwh.supabase.co",SB_KEY="sb_publishable_Z6dLzghS7u2xUjOy93BxwQ_R2QhWikq";
 // ===== UPI CONFIG: paste your real UPI ID (VPA) between the quotes below, e.g. "plasma2k26@okhdfcbank" =====
-var UPI_VPA="",UPI_NAME="PLASMA 2K26"; var ACCOMMODATION_UPI_VPA="9380795731-2@axl",ACCOMMODATION_UPI_NAME="PLASMA 2K26 Accommodation";
-function setupAccommodationPayment(){
-  var vpa=ACCOMMODATION_UPI_VPA;
-  var display=document.getElementById("accommodationUpiDisplay");
-  var countEl=document.getElementById("accommodation_member_count");
-  var amountEl=document.getElementById("accommodationAmount");
-  var g=document.getElementById("accomGPay"),p=document.getElementById("accomPhonePe"),t=document.getElementById("accomPaytm"),u=document.getElementById("accomUPI");
-  if(display) display.textContent=vpa;
-  function update(){
-    var count=Math.max(1,parseInt((countEl&&countEl.value)||1,10)||1);
-    var amount=count*150;
-    if(amountEl) amountEl.textContent="Total Accommodation Amount: ₹"+amount+" (₹150 × "+count+" member"+(count===1?"":"s")+")";
-    var params="pa="+encodeURIComponent(vpa)+"&pn="+encodeURIComponent(ACCOMMODATION_UPI_NAME)+"&am="+amount+"&cu=INR&tn="+encodeURIComponent("PLASMA2K26 Accommodation - "+count+" member(s)");
-    if(g) g.href="tez://upi/pay?"+params;
-    if(p) p.href="phonepe://pay?"+params;
-    if(t) t.href="paytmmp://pay?"+params;
-    if(u) u.href="upi://pay?"+params;
-  }
-  if(countEl) countEl.addEventListener("input",update);
-  [g,p,t,u].forEach(function(btn){
-    if(btn) btn.addEventListener("click",function(ev){
-      update();
-      if(!vpa || vpa.indexOf("REPLACE_WITH_")===0){
-        ev.preventDefault();
-        alert("Accommodation UPI ID is not configured yet.");
-      }
-    });
-  });
-  update();
-}
-
+var UPI_VPA="",UPI_NAME="PLASMA 2K26";
 var SAMPLE=[
 {id:1,name:"Line Follower",track:"Robotics",description:"Build an autonomous bot that follows the track line fastest.",event_date:"2026-10-27",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/line-follower.pdf"},
 {id:2,name:"Robo Race",track:"Robotics",description:"Navigate your bot through the obstacle track against the clock.",event_date:"2026-10-27",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/robo-race.pdf"},
@@ -505,7 +370,7 @@ var SAMPLE=[
 {id:4,name:"H/W Hackathon + PCB Design",track:"Code & Compute",description:"Design a PCB and build a working hardware prototype against the clock.",event_date:"2026-10-27",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/hw-hackathon-pcb-design.pdf"},
 {id:5,name:"Sumo",track:"Robotics",description:"Push your opponent's bot out of the ring.",event_date:"2026-10-28",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/sumo.pdf"},
 {id:6,name:"Soccer",track:"Robotics",description:"Bot-vs-bot soccer knockout matches.",event_date:"2026-10-28",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/soccer.pdf"}];
-var COORDS=[{n:"Thrishul Kumar BS",p:"9380795731",d:"93807 95731"},{n:"Vivek GK",p:"7411563037",d:"74115 63037"},{n:"Nimitha Sindhe",p:"9035316490",d:"90353 16490"}];
+var COORDS=[{n:"Thrishul Kumar BS",p:"9380795731",d:"93807 95731"},{n:"Vivek GK",p:"7411563037",d:"74115 63037"}];
 var EV=[],live=SB_URL.indexOf("YOUR-")<0;
 function esc(t){return String(t==null?"":t).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 var ICONS={
@@ -590,6 +455,11 @@ function drawEvents(){document.getElementById("event-list").innerHTML=EV.map(fun
  var when=fd(e.event_date||"TBA");
  var fee=(e.fee==null)?"TBA":(e.fee>0?("₹"+e.fee):"Free");
  var coord="";
+ if(e.coordinator_name||e.coordinator_phone){
+   coord='<div class="coord">Coordinator: '+esc(e.coordinator_name||"")+(e.coordinator_phone?' · <a href="tel:'+esc(e.coordinator_phone)+'" onclick="event.stopPropagation()">'+esc(e.coordinator_phone)+'</a>':'')+'</div>';
+ }else{
+   coord='<div class="coord">Coordinators: '+COORDS.map(function(c){return esc(c.n)+' · <a href="tel:+91'+c.p+'" onclick="event.stopPropagation()">'+c.d+'</a>'}).join('<br>')+'</div>';
+ }
  return'<div class="card ev rv in" data-open="'+e.id+'" style="cursor:pointer">'+evImg(e)+'<div class="eicon">'+iconFor(e.name)+'</div><h3>'+esc(e.name)+'</h3><p><b>'+esc(e.track)+'</b></p><div class="meta">'+when+' · '+esc(e.venue||"Venue to be announced")+'</div><p>'+esc(e.description)+'</p><div class="meta">Team: '+esc(e.team_size)+' · Fee: '+fee+' · Prize: '+esc(e.prize||"To be announced")+'</div>'+coord+'<div class="rulebook-wrap">'+(e.reg_open?'<a class="btn" href="#register" data-pick="'+e.id+'">Register</a>':'<p>Registration closed</p>')+('<a href="'+esc(e.rulebook_url||("rulebooks/"+slug(e.name)+".pdf"))+'" target="_blank" rel="noopener noreferrer" class="rulebook-btn" onclick="event.stopPropagation()">📘 Rulebook</a>')+'</div></div>'}).join("")}
 function updatePool(){var el=document.getElementById("poolStat");if(el)el.textContent="₹1,00,000"}
 function updatePay(){var id=+document.getElementById("f_event").value,e=EV.filter(function(x){return x.id===id})[0],box=document.getElementById("payBox");
@@ -603,107 +473,16 @@ document.getElementById("event-list").addEventListener("click",function(ev){
  var card=ev.target.closest("[data-open]");if(card){document.getElementById("f_event").value=card.dataset.open;updatePay();document.getElementById("register").scrollIntoView({behavior:"smooth"})}
 });
 document.getElementById("rf").addEventListener("submit",async function(ev){ev.preventDefault();
- var m=document.getElementById("msg"),body={event_id:+document.getElementById("f_event").value,name:f_name.value.trim(),email:f_email.value.trim(),phone:f_phone.value.trim(),college:f_college.value.trim(),team_members:f_team.value.trim(),payment_ref:f_payref.value.trim(),accommodation_required:(document.querySelector('input[name="accommodation"]:checked')||{}).value||null,accommodation_member_count:parseInt((document.getElementById("accommodation_member_count")||{}).value||"0",10)||null,accommodation_amount:(parseInt((document.getElementById("accommodation_member_count")||{}).value||"0",10)||0)*150,accommodation_utr:(document.getElementById("accommodation_utr")||{}).value||null};
+ var m=document.getElementById("msg"),body={event_id:+document.getElementById("f_event").value,name:f_name.value.trim(),email:f_email.value.trim(),phone:f_phone.value.trim(),college:f_college.value.trim(),team_members:f_team.value.trim(),payment_ref:f_payref.value.trim()};
  if(!live){m.textContent="Demo mode: add your Supabase URL and key to save registrations.";return}
  try{var r=await fetch(SB_URL+"/rest/v1/registrations",{method:"POST",headers:Object.assign(hdr(),{Prefer:"return=minimal"}),body:JSON.stringify(body)});
  m.textContent=r.ok?"Registered! See you at PLASMA 2K26.":(r.status===409?"You are already registered for this event.":"Something went wrong. Please try again.");if(r.ok)this.reset()}
  catch(e){m.textContent="Network error. Please try again."}});
-setupAccommodationPayment();loadEvents();buildGallery();
+loadEvents();buildGallery();
 var as=document.getElementById("aboutShots");if(as)as.addEventListener("click",function(ev){var im=ev.target.closest("img");if(!im)return;openPicture(im.src,im.alt||"PLASMA 2K26 photo")});
 var q=new URLSearchParams(location.search).get("event");
 if(q){setTimeout(function(){var f=document.getElementById("f_event");f.value=q;updatePay();document.getElementById("register").scrollIntoView()},600)}
 })();
 </script>
-
-<script>
-document.addEventListener("change", function(e){
-  if(e.target && e.target.name === "accommodation" && e.target.checked){
-    document.querySelectorAll('input[name="accommodation"]').forEach(function(cb){
-      if(cb !== e.target) cb.checked = false;
-    });
-  }
-});
-</script>
-
-
-<script>
-(function(){
-  const yes = document.getElementById("accommodation_yes");
-  const no = document.getElementById("accommodation_no");
-  const box = document.getElementById("accommodationPayment");
-  const upiText = document.getElementById("accommodationUpiId");
-  const payBtn = document.getElementById("accommodationPayBtn");
-  const accommodationVpa = (typeof ACCOMMODATION_UPI_VPA !== "undefined") ? ACCOMMODATION_UPI_VPA : "";
-
-  function updateAccommodation(){
-    if(!yes) return;
-
-    if(yes.checked){
-      if(box) box.classList.remove("hide");
-
-      if(upiText) upiText.textContent = accommodationVpa || "Accommodation UPI ID not configured";
-      if(payBtn){
-        if(accommodationVpa && accommodationVpa.indexOf("REPLACE_WITH_") !== 0){
-          payBtn.href = "upi://pay?pa=" + encodeURIComponent(accommodationVpa) +
-            "&pn=" + encodeURIComponent("PLASMA 2K26 Accommodation");
-          // Payment app buttons below handle the accommodation payment redirect.
-        }else{
-          payBtn.href = "#";
-          payBtn.textContent = "Accommodation UPI ID Pending";
-        }
-      }
-    }else if(box){
-      box.classList.add("hide");
-    }
-  }
-
-  [yes,no].forEach(function(el){
-    if(el) el.addEventListener("change", updateAccommodation);
-  });
-
-  window.getAccommodationRequired = function(){
-    const selected = document.querySelector('input[name="accommodation"]:checked');
-    return selected ? selected.value : "";
-  };
-})();
-</script>
-
-
-<script>
-(function(){
-  var form=document.getElementById("rf");
-  if(!form) return;
-  form.addEventListener("submit",function(e){
-    var selected=document.querySelector('input[name="accommodation"]:checked');
-    if(!selected){
-      e.preventDefault();
-      var m=document.getElementById("msg");
-      if(m) m.textContent="Please select YES or NO for accommodation.";
-    }
-  },true);
-})();
-</script>
-
-
-<script>
-(function(){
-  var form=document.getElementById("rf");
-  if(!form) return;
-  form.addEventListener("submit",function(e){
-    var selected=document.querySelector('input[name="accommodation"]:checked');
-    var utr=document.getElementById("accommodation_utr");
-    if(selected && selected.value==="YES" && (!utr || !utr.value.trim())){
-      e.preventDefault();
-      if(utr){
-        utr.focus();
-        utr.style.borderColor="var(--gold)";
-      }
-      var m=document.getElementById("msg");
-      if(m) m.textContent="Please enter the accommodation payment UTR number.";
-    }
-  },true);
-})();
-</script>
-
 </body>
 </html>
