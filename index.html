@@ -278,8 +278,8 @@ body::before{
 <section id="coordinators" class="coordinator-top">
 <h2>Event Coordinators</h2>
 <div class="coordinator-grid">
-<div class="coordinator-card"><b>Thrishul Kumar BS</b><a href="tel:+919380795731">93807 95731</a></div>
 <div class="coordinator-card"><b>Vivek GK</b><a href="tel:+917411563037">74115 63037</a></div>
+ <div class="coordinator-card"><b>Thrishul Kumar BS</b><a href="tel:+919380795731">93807 95731</a></div>
 <div class="coordinator-card"><b>Nimitha Sindhe</b><a href="tel:+919035316490">90353 16490</a></div>
 </div></section>
 
@@ -327,61 +327,6 @@ body::before{
 <input id="f_phone" placeholder="Phone number">
 <input id="f_college" placeholder="College">
 <textarea id="f_team" rows="2" placeholder="Team members (if any)"></textarea>
-
-<div id="accommodationSection" class="accommodation-section">
-  <div class="card">
-    <div class="eyebrow">TEAM SERVICES</div>
-    <h2>Accommodation Required?</h2>
-    <p class="muted">Select an option below. If accommodation is required, you will be redirected to the accommodation payment page.</p>
-
-    <div class="accommodation-options">
-      <label class="accommodation-option">
-        <input type="radio" name="accommodation" value="YES" id="accommodation_yes">
-        <span><b>YES</b><small>Accommodation required</small></span>
-      </label>
-
-      <label class="accommodation-option">
-        <input type="radio" name="accommodation" value="NO" id="accommodation_no">
-        <span><b>NO</b><small>No accommodation required</small></span>
-      </label>
-    </div>
-
-    <div id="accommodationPayment" class="accommodation-payment hide">
-      <div class="paybox">
-        <b>Accommodation Payment</b>
-        <p class="muted">Please complete the accommodation payment using the UPI ID below.</p>
-        <div class="upi-id" id="accommodationUpiDisplay">REPLACE_WITH_ACCOMMODATION_UPI_ID</div>
-        <div class="member-count-box" style="margin-top:14px">
-          <label for="accommodation_member_count"><b>Accommodation Member Count</b></label>
-          <input type="number" id="accommodation_member_count" name="accommodation_member_count" min="1" step="1" value="1" placeholder="Enter number of members" style="width:100%;margin-top:8px">
-          <small class="muted">Accommodation fee: ₹150 per head</small>
-          <div id="accommodationAmount" class="upi-id" style="margin-top:10px">Total Accommodation Amount: ₹150</div>
-        </div>
-        <div class="accommodation-pay-options">
-          <a class="pay-app" id="accomPhonePe" href="#" target="_blank" rel="noopener">PhonePe</a>
-          <a class="pay-app" id="accomGPay" href="#" target="_blank" rel="noopener">Google Pay</a>
-          <a class="pay-app" id="accomPaytm" href="#" target="_blank" rel="noopener">Paytm</a>
-          <a class="pay-app" id="accomUPI" href="#" target="_blank" rel="noopener">Other UPI Apps</a>
-        </div>
-        <p class="upi-note">Choose your preferred UPI app. If the selected app is not installed, use another option.</p>
-        
-<div class="accommodation-utr" style="margin-top:16px">
-  <label for="accommodation_utr"><b>Accommodation UTR / Transaction Reference No.</b></label>
-  <input
-    type="text"
-    id="accommodation_utr"
-    name="accommodation_utr"
-    placeholder="Enter accommodation payment UTR number"
-    autocomplete="off"
-    style="width:100%;margin-top:8px"
-  >
-  <small class="muted">Enter the UTR/reference number after completing the accommodation payment.</small>
-</div>
-
-<p class="muted small">After payment, enter the UTR/payment reference in the registration form.</p>
-      </div>
-    </div>
-  </div>
 </div>
 
 
