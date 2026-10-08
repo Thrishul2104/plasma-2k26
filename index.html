@@ -194,12 +194,12 @@ body::before{
 .bmid>span:not(.status-chip){display:block;margin-top:4px;color:var(--mu);font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
 @media(max-width:700px){.blogo small{font-size:6px;letter-spacing:.55px}.bmid b{font-size:clamp(10px,3.2vw,16px);letter-spacing:0}.bmid>span:not(.status-chip){font-size:7px;letter-spacing:.8px}}
 
-
-
-
-
+.accommodation-pay-options{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.accommodation-pay-options .pay-app{flex:1 1 150px;min-width:140px;text-align:center;padding:11px 14px;border-radius:8px;text-decoration:none;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--mag),var(--vio));transition:.25s}
+.accommodation-pay-options .pay-app:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,61,139,.35)}
+.upi-note{font-size:12px!important;color:#9f8ca9!important;margin-top:12px!important}
 <style>
-
+.member-count-box input{font-size:1rem;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.22);color:inherit;border-radius:10px;padding:12px 14px;box-sizing:border-box}
 .status-chip{display:inline-flex;align-items:center;gap:8px;position:relative;left:-10px}.status-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;flex:0 0 10px;box-shadow:0 0 0 3px rgba(34,197,94,.18),0 0 12px rgba(34,197,94,.95);animation:statusBlink .9s ease-in-out infinite}@keyframes statusBlink{0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 3px rgba(34,197,94,.18),0 0 12px rgba(34,197,94,.95)}50%{opacity:.25;transform:scale(.78);box-shadow:0 0 0 5px rgba(34,197,94,.06),0 0 3px rgba(34,197,94,.35)}}
 </style>
 </style>
@@ -212,10 +212,10 @@ body::before{
 .accommodation-option input{width:20px;height:20px;accent-color:#e0b04a}
 .accommodation-option span{display:flex;flex-direction:column;gap:4px}
 .accommodation-option small{color:#bcaec4;font-size:12px}
-
-
-
-
+.accommodation-payment{margin-top:20px}
+.accommodation-payment .paybox{padding:20px;border:1px solid rgba(224,176,74,.28);border-radius:16px;background:linear-gradient(135deg,rgba(224,176,74,.08),rgba(255,61,139,.06))}
+.upi-id{display:inline-block;margin:10px 0 16px;padding:10px 14px;border-radius:10px;background:rgba(0,0,0,.22);font-weight:700;letter-spacing:.4px}
+.small{font-size:12px}
 @media(max-width:700px){.accommodation-options{grid-template-columns:1fr}}
 </style>
 
@@ -320,26 +320,59 @@ body::before{
   <div class="card">
     <div class="eyebrow">TEAM SERVICES</div>
     <h2>Accommodation Required?</h2>
-    <p class="muted">Select YES if you require accommodation. If YES is selected, use the Google Form below to submit your accommodation details.</p>
+    <p class="muted">Select an option below. If you select YES, the accommodation registration Google Form will be displayed below. If you select NO, the accommodation section will remain closed.</p>
 
     <div class="accommodation-options">
       <label class="accommodation-option">
-        <input type="checkbox" name="accommodation" value="YES" id="accommodation_yes">
+        <input type="checkbox" name="accommodation" value="true" id="accommodation_yes">
         <span><b>YES</b><small>Accommodation required</small></span>
       </label>
+
       <label class="accommodation-option">
-        <input type="checkbox" name="accommodation" value="NO" id="accommodation_no">
-        <span><b>NO</b><small>Accommodation not required</small></span>
+        <input type="checkbox" name="accommodation" value="false" id="accommodation_no">
+        <span><b>NO</b><small>No accommodation required</small></span>
       </label>
     </div>
 
-    <div id="accommodationGoogleForm" class="accommodation-google-form hide" style="margin-top:20px;text-align:center">
-      <p class="muted" style="margin-bottom:12px">Please complete the accommodation registration form:</p>
-      <a id="accommodationGoogleFormLink"
-         class="btn"
-         href="YOUR_GOOGLE_FORM_LINK_HERE"
-         target="_blank"
-         rel="noopener noreferrer">Accommodation Registration Google Form</a>
+    <div id="accommodationPayment" class="accommodation-payment hide">
+      <div class="paybox">
+        <div id="accommodationGoogleFormBox" class="accommodation-google-form" style="margin-bottom:16px;padding:16px;border:1px solid rgba(224,176,74,.28);border-radius:14px;background:rgba(224,176,74,.06);text-align:center">
+          <b>Accommodation Registration</b>
+          <p class="muted" style="margin:8px 0 12px">Complete the accommodation registration form using the button below.</p>
+          <a id="accommodationGoogleForm" class="btn" href="#" target="_blank" rel="noopener noreferrer">Open Accommodation Google Form</a>
+        </div>
+        <b>Accommodation Payment</b>
+        <p class="muted">Please complete the accommodation payment using the UPI ID below.</p>
+        <div class="upi-id" id="accommodationUpiDisplay">REPLACE_WITH_ACCOMMODATION_UPI_ID</div>
+        <div class="member-count-box" style="margin-top:14px">
+          <label for="accommodation_member_count"><b>Accommodation Member Count</b></label>
+          <input type="number" id="accommodation_member_count" name="accommodation_member_count" min="1" step="1" value="1" placeholder="Enter number of members" style="width:100%;margin-top:8px">
+          <small class="muted">Accommodation fee: ₹150 per head</small>
+          <div id="accommodationAmount" class="upi-id" style="margin-top:10px">Total Accommodation Amount: ₹150</div>
+        </div>
+        <div class="accommodation-pay-options">
+          <a class="pay-app" id="accomPhonePe" href="#" target="_blank" rel="noopener">PhonePe</a>
+          <a class="pay-app" id="accomGPay" href="#" target="_blank" rel="noopener">Google Pay</a>
+          <a class="pay-app" id="accomPaytm" href="#" target="_blank" rel="noopener">Paytm</a>
+          <a class="pay-app" id="accomUPI" href="#" target="_blank" rel="noopener">Other UPI Apps</a>
+        </div>
+        <p class="upi-note">Choose your preferred UPI app. If the selected app is not installed, use another option.</p>
+        
+<div class="accommodation-utr" style="margin-top:16px">
+  <label for="accommodation_utr"><b>Accommodation UTR / Transaction Reference No.</b></label>
+  <input
+    type="text"
+    id="accommodation_utr"
+    name="accommodation_utr"
+    placeholder="Enter accommodation payment UTR number"
+    autocomplete="off"
+    style="width:100%;margin-top:8px"
+  >
+  <small class="muted">Enter the UTR/reference number after completing the accommodation payment.</small>
+</div>
+
+<p class="muted small">After payment, enter the UTR/payment reference in the registration form.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -561,12 +594,12 @@ document.getElementById("event-list").addEventListener("click",function(ev){
  var card=ev.target.closest("[data-open]");if(card){document.getElementById("f_event").value=card.dataset.open;updatePay();document.getElementById("register").scrollIntoView({behavior:"smooth"})}
 });
 document.getElementById("rf").addEventListener("submit",async function(ev){ev.preventDefault();
- var m=document.getElementById("msg"),body={event_id:+document.getElementById("f_event").value,name:f_name.value.trim(),email:f_email.value.trim(),phone:f_phone.value.trim(),college:f_college.value.trim(),team_members:f_team.value.trim(),payment_ref:f_payref.value.trim(),accommodation_required:(typeof getAccommodationRequired==="function"?getAccommodationRequired():null)}).value||"0",10)||null):null}).value||"0",10)||0)*150):null}).value||null):null};
+ var m=document.getElementById("msg"),body={event_id:+document.getElementById("f_event").value,name:f_name.value.trim(),email:f_email.value.trim(),phone:f_phone.value.trim(),college:f_college.value.trim(),team_members:f_team.value.trim(),payment_ref:f_payref.value.trim(),accommodation_required:(typeof getAccommodationRequired==="function"?getAccommodationRequired():null),accommodation_member_count:(typeof getAccommodationRequired==="function"&&getAccommodationRequired()===true)?(parseInt((document.getElementById("accommodation_member_count")||{}).value||"0",10)||null):null,accommodation_amount:(typeof getAccommodationRequired==="function"&&getAccommodationRequired()===true)?((parseInt((document.getElementById("accommodation_member_count")||{}).value||"0",10)||0)*150):null,accommodation_utr:(typeof getAccommodationRequired==="function"&&getAccommodationRequired()===true)?((document.getElementById("accommodation_utr")||{}).value||null):null};
  if(!live){m.textContent="Demo mode: add your Supabase URL and key to save registrations.";return}
  try{var r=await fetch(SB_URL+"/rest/v1/registrations",{method:"POST",headers:Object.assign(hdr(),{Prefer:"return=minimal"}),body:JSON.stringify(body)});
  m.textContent=r.ok?"Registered! See you at PLASMA 2K26.":(r.status===409?"You are already registered for this event.":"Something went wrong. Please try again.");if(r.ok)this.reset()}
  catch(e){m.textContent="Network error. Please try again."}});
-loadEvents();buildGallery();
+setupAccommodationPayment();loadEvents();buildGallery();
 var as=document.getElementById("aboutShots");if(as)as.addEventListener("click",function(ev){var im=ev.target.closest("img");if(!im)return;openPicture(im.src,im.alt||"PLASMA 2K26 photo")});
 var q=new URLSearchParams(location.search).get("event");
 if(q){setTimeout(function(){var f=document.getElementById("f_event");f.value=q;updatePay();document.getElementById("register").scrollIntoView()},600)}
@@ -626,29 +659,19 @@ document.addEventListener("change", function(e){
 
 
 
-
 <script>
 (function(){
-  var yes=document.getElementById("accommodation_yes");
-  var no=document.getElementById("accommodation_no");
-  var box=document.getElementById("accommodationGoogleForm");
-
-  function updateAccommodation(){
-    if(!yes || !no) return;
-    if(yes.checked){
-      no.checked=false;
-      if(box) box.classList.remove("hide");
-    }else if(no.checked){
-      yes.checked=false;
-      if(box) box.classList.add("hide");
-    }else{
-      if(box) box.classList.add("hide");
+  var form=document.getElementById("rf");
+  if(!form) return;
+  form.addEventListener("submit",function(e){
+    var req=(typeof getAccommodationRequired==="function")?getAccommodationRequired():null;
+    if(req===null){e.preventDefault();var m=document.getElementById("msg");if(m)m.textContent="Please select YES or NO for accommodation.";return;}
+    if(req===true){
+      var count=document.getElementById("accommodation_member_count"), utr=document.getElementById("accommodation_utr");
+      if(!count || !parseInt(count.value,10) || parseInt(count.value,10)<1){e.preventDefault();if(count)count.focus();var m=document.getElementById("msg");if(m)m.textContent="Please enter the accommodation member count.";return;}
+      if(!utr || !utr.value.trim()){e.preventDefault();if(utr)utr.focus();var m2=document.getElementById("msg");if(m2)m2.textContent="Please enter the accommodation payment UTR number.";return;}
     }
-  }
-  [yes,no].forEach(function(el){
-    if(el) el.addEventListener("change",updateAccommodation);
-  });
-  updateAccommodation();
+  },true);
 })();
 </script>
 </body>
