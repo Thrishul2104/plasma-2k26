@@ -151,6 +151,12 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--mag);box
 @media(max-width:700px){.blogo small{font-size:7px;letter-spacing:.8px}.bmid b{font-size:clamp(11px,3.2vw,17px);letter-spacing:.5px}.bmid span{font-size:8px;letter-spacing:1px}}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 
+.payment-card{max-width:720px;margin:0 auto;text-align:center;background:var(--card);border:1px solid #6b2a44;border-radius:14px;padding:28px;box-shadow:0 12px 35px rgba(255,61,139,.12)}
+.payment-card h3{color:var(--mag);font-size:22px;margin:0 0 8px}
+.payment-card p{color:var(--mu);margin:8px 0 18px}
+.payment-btn{display:inline-block;margin-top:8px;padding:13px 30px;border-radius:7px;text-decoration:none;font-weight:700;background:linear-gradient(90deg,var(--mag),var(--vio));color:#fff;transition:transform .25s,box-shadow .25s}
+.payment-btn:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(255,61,139,.5)}
+.payment-note{font-size:12px!important;color:#9f8ca9!important;margin-top:14px!important}
 .rulebook-wrap{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:14px;text-align:center}.rulebook-wrap .btn,.rulebook-wrap .rulebook-btn{margin-left:auto;margin-right:auto;text-align:center}
 .rulebook-btn{display:inline-block;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;color:#fff;background:linear-gradient(90deg,var(--mag),var(--vio));transition:.25s}
 .rulebook-btn:hover{transform:translateY(-2px);box-shadow:0 7px 20px rgba(255,61,139,.35)}
@@ -186,6 +192,10 @@ body::before{
 .bmid>span:not(.status-chip){display:block;margin-top:4px;color:var(--mu);font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
 @media(max-width:700px){.blogo small{font-size:6px;letter-spacing:.55px}.bmid b{font-size:clamp(10px,3.2vw,16px);letter-spacing:0}.bmid>span:not(.status-chip){font-size:7px;letter-spacing:.8px}}
 
+.accommodation-pay-options{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.accommodation-pay-options .pay-app{flex:1 1 150px;min-width:140px;text-align:center;padding:11px 14px;border-radius:8px;text-decoration:none;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--mag),var(--vio));transition:.25s}
+.accommodation-pay-options .pay-app:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,61,139,.35)}
+.upi-note{font-size:12px!important;color:#9f8ca9!important;margin-top:12px!important}
 <style>
 .member-count-box input{font-size:1rem;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.22);color:inherit;border-radius:10px;padding:12px 14px;box-sizing:border-box}
 .status-chip{display:inline-flex;align-items:center;gap:8px;position:relative;left:-10px}.status-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;flex:0 0 10px;box-shadow:0 0 0 3px rgba(34,197,94,.18),0 0 12px rgba(34,197,94,.95);animation:statusBlink .9s ease-in-out infinite}@keyframes statusBlink{0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 3px rgba(34,197,94,.18),0 0 12px rgba(34,197,94,.95)}50%{opacity:.25;transform:scale(.78);box-shadow:0 0 0 5px rgba(34,197,94,.06),0 0 3px rgba(34,197,94,.35)}}
@@ -195,32 +205,22 @@ body::before{
 .coordinator-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:16px;border:1px solid #3a204d;border-radius:14px;background:rgba(255,255,255,.035);text-align:center}
 .coordinator-card b{font-size:1rem}.coordinator-card a{color:var(--tx);text-decoration:none}.coordinator-card a:hover{text-decoration:underline}
 @media(max-width:700px){.coordinator-grid{grid-template-columns:1fr}}
-
-/* Static registration container */
-.registration-container{margin:34px 0;padding:28px;border:1px solid rgba(224,176,74,.28);border-radius:18px;background:linear-gradient(135deg,rgba(22,10,31,.96),rgba(15,7,24,.96));box-shadow:0 18px 45px rgba(0,0,0,.25)}
-.registration-container h2{margin:0 0 8px;color:#e0b04a}
-.registration-container .reg-intro{color:#b9a6c4;margin:0 0 22px;line-height:1.6}
-.registration-grid{display:flex;justify-content:center;align-items:stretch;gap:18px;flex-wrap:wrap}.registration-grid .registration-card{width:min(360px,100%)}
-.registration-card{padding:22px;border:1px solid #3a1d4a;border-radius:14px;background:#160a1f}
-.registration-card h3{margin:0 0 8px;color:#f3e9f5}
-.registration-card p{margin:0 0 16px;color:#b9a6c4;line-height:1.55}
-.registration-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:11px 18px;border-radius:8px;background:linear-gradient(90deg,#ff3d8b,#9b5cff);color:#fff;font-weight:700}
-.registration-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.registration-btn.drive{background:linear-gradient(90deg,#9b5cff,#ff3d8b)}
-.container {
-  display: flex;
-  justify-content: center; /* Centers cards horizontally */
-  align-items: center;     /* Centers cards vertically if container has height */
-  gap: 24px;              /* Adds clean spacing between the two cards */
-  flex-wrap: wrap;         /* Ensures responsiveness on smaller screens */
-  text-align: center;      /* Centers the text inside the containers */
-}
 </style>
 </style>
 
 <style>
+.accommodation-section .card{position:relative;overflow:hidden}
+.accommodation-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:22px}
+.accommodation-option{display:flex;align-items:center;gap:14px;padding:18px 20px;border:1px solid rgba(224,176,74,.25);border-radius:16px;background:rgba(255,255,255,.035);cursor:pointer;transition:.25s}
+.accommodation-option:hover{transform:translateY(-2px);border-color:rgba(224,176,74,.65);background:rgba(255,255,255,.06)}
+.accommodation-option input{width:20px;height:20px;accent-color:#e0b04a}
+.accommodation-option span{display:flex;flex-direction:column;gap:4px}
+.accommodation-option small{color:#bcaec4;font-size:12px}
+.accommodation-payment{margin-top:20px}
+.accommodation-payment .paybox{padding:20px;border:1px solid rgba(224,176,74,.28);border-radius:16px;background:linear-gradient(135deg,rgba(224,176,74,.08),rgba(255,61,139,.06))}
+.upi-id{display:inline-block;margin:10px 0 16px;padding:10px 14px;border-radius:10px;background:rgba(0,0,0,.22);font-weight:700;letter-spacing:.4px}
 .small{font-size:12px}
-@media(max-width:700px){}
+@media(max-width:700px){.accommodation-options{grid-template-columns:1fr}}
 </style>
 
 
@@ -239,7 +239,14 @@ body::before{
 .brandbar .blogo small{display:none}
 @media(max-width:700px){.brandbar .lg{width:78px;height:78px;flex-basis:78px;border-radius:18px;padding:6px}.brandbar{grid-template-columns:64px 1fr 64px;gap:4px;padding:8px 7px}.brandbar .blogo:first-child{justify-content:flex-start}.brandbar .blogo.right{justify-content:flex-end}.brandbar .lg{width:56px;height:56px;flex-basis:56px;padding:4px}.brandbar .bmid{padding:0 3px}.brandbar .bmid b{font-size:11px;white-space:normal}.brandbar .bmid span{font-size:7px;letter-spacing:.5px;white-space:normal}.brandbar .status-chip{font-size:7px;letter-spacing:.8px}}
 
-.@media(max-width:700px){.brandbar{margin-bottom:12px}}
+.registration-container{max-width:920px;margin:0 auto;background:linear-gradient(180deg,rgba(22,10,31,.96),rgba(16,7,24,.96));border:1px solid #6b2a44;border-radius:18px;padding:28px;box-shadow:0 18px 45px rgba(0,0,0,.28),0 0 35px rgba(255,61,139,.08)}
+.registration-container form{max-width:none;margin:0;display:grid;gap:14px}
+.registration-container .accommodation-section{padding:0;margin:4px 0 0;max-width:none}
+.registration-container .accommodation-section>.card{background:rgba(10,4,16,.45);border-color:#3a1d4a;box-shadow:none}
+.registration-container .payment-card{max-width:none}
+.registration-container #f_payref{margin-top:2px}
+.registration-container .register-submit{width:100%;margin-top:4px}
+@media(max-width:700px){.registration-container{padding:18px;border-radius:14px}.brandbar{margin-bottom:12px}}
 </style>
 
 </head>
@@ -250,7 +257,7 @@ body::before{
 <div class="bmid"><b>Jawaharlal Nehru New College of Engineering</b><span>Savalanga Road, Navule, Shimoga</span><span class="status-chip"><i class="status-dot"></i>Registrations Online</span></div>
 <div class="blogo right"><div class="lg"><img src="logos/jnnce.png" alt="JNNCE logo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb">JNNCE</span></div><small>JNNCE &middot; Shivamogga</small></div>
 </div>
-<nav><b>PLASMA 2K26</b><div><a href="#about">About</a><a href="#college">College</a><a href="#events">Events</a><a href="#register">Register</a><a href="#venue">Venue</a></div></nav>
+<nav><b>PLASMA 2K26</b><div><a href="#about">About</a><a href="#college">College</a><a href="#events">Events</a><a href="#register">Register</a><a href="#venue">Venue</a><a href="admin.html" style="border:1px solid var(--gold);color:var(--gold);padding:5px 14px;border-radius:20px;font-size:13px">Admin</a></div></nav>
 
 <header class="hero">
 <canvas id="fx"></canvas>
@@ -304,106 +311,105 @@ body::before{
 
 <section id="events">
 <h2>Events</h2>
-<p class="sub rv">All the events at a glance — explore the events and download their rulebooks.</p>
-<div class="grid" id="event-list">
- 
-<div class="meta">
-  <b>27 Oct 2026</b> ·
-  <b>Silver Jubilee Building, Dept. of ECE</b>
-</div>
-<p>Build an autonomous bot that follows the track line fastest.</p>
-<div class="meta">Team: 1-4 · Fee: ₹300 · Prize: ₹13,000/-</div>
-</div>
-</div>
-
-<div class="meta">
-  <b>27 Oct 2026</b> ·
-  <b>Silver Jubilee Building, Dept. of ECE</b>
-</div>
-<p>Build an autonomous bot that follows the track line fastest.</p>
-<div class="meta">Team: 1-4 · Fee: ₹300 · Prize: ₹13,000/-</div>
-</div>
-</div>
- 
-<div class="meta">
-  <b>27 Oct 2026</b> ·
-  <b>Silver Jubilee Building, Dept. of ECE</b>
-</div>
-<p>Build an autonomous bot that follows the track line fastest.</p>
-<div class="meta">Team: 1-4 · Fee: ₹300 · Prize: ₹13,000/-</div>
-</div>
-</div>
-
-<div class="meta">
-  <b>27 Oct 2026</b> ·
-  <b>Silver Jubilee Building, Dept. of ECE</b>
-</div>
-<p>Build an autonomous bot that follows the track line fastest.</p>
-<div class="meta">Team: 1-4 · Fee: ₹300 · Prize: ₹13,000/-</div>
-</div>
-</div>
-
-<div class="meta">
-  <b>27 Oct 2026</b> ·
-  <b>Silver Jubilee Building, Dept. of ECE</b>
-</div>
-<p>Build an autonomous bot that follows the track line fastest.</p>
-<div class="meta">Team: 1-4 · Fee: ₹300 · Prize: ₹13,000/-</div>
-</div>
-</div>
-
-<div class="meta">
-  <b>27 Oct 2026</b> ·
-  <b>Silver Jubilee Building, Dept. of ECE</b>
-</div>
-<p>Build an autonomous bot that follows the track line fastest.</p>
-<div class="meta">Team: 1-4 · Fee: ₹300 · Prize: ₹13,000/-</div>
-</div>
-</div>
-
-<div class="meta">
-  <b>27 Oct 2026</b> ·
-  <b>Silver Jubilee Building, Dept. of ECE</b>
-</div>
-<p>Build an autonomous bot that follows the track line fastest.</p>
-<div class="meta">Team: 1-4 · Fee: ₹300 · Prize: ₹13,000/-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-</div>
+<p class="sub rv">All the events at a glance — pick one and register below.</p>
+<p id="evStatus" style="text-align:center;color:var(--mag)"></p>
+<div class="grid" id="event-list"></div>
 </section>
 
+<section id="register">
+<h2>Register</h2>
+<p class="sub rv">Fill in your details, select an event, complete the payment, and submit your registration.</p>
+<div class="registration-container">
+<form id="rf">
+<select id="f_event" required><option value="">Select event</option></select>
+<input id="f_name" placeholder="Full name" required>
+<input id="f_email" type="email" placeholder="Email" required>
+<input id="f_phone" placeholder="Phone number">
+<input id="f_college" placeholder="College">
+<textarea id="f_team" rows="2" placeholder="Team members (if any)"></textarea>
 
+<div id="accommodationSection" class="accommodation-section">
+  <div class="card">
+    <div class="eyebrow">TEAM SERVICES</div>
+    <h2>Accommodation Required?</h2>
+    <p class="muted">Select an option below. If accommodation is required, you will be redirected to the accommodation payment page.</p>
+
+    <div class="accommodation-options">
+      <label class="accommodation-option">
+        <input type="radio" name="accommodation" value="YES" id="accommodation_yes">
+        <span><b>YES</b><small>Accommodation required</small></span>
+      </label>
+
+      <label class="accommodation-option">
+        <input type="radio" name="accommodation" value="NO" id="accommodation_no">
+        <span><b>NO</b><small>No accommodation required</small></span>
+      </label>
+    </div>
+
+    <div id="accommodationPayment" class="accommodation-payment hide">
+      <div class="paybox">
+        <b>Accommodation Payment</b>
+        <p class="muted">Please complete the accommodation payment using the UPI ID below.</p>
+        <div class="upi-id" id="accommodationUpiDisplay">REPLACE_WITH_ACCOMMODATION_UPI_ID</div>
+        <div class="member-count-box" style="margin-top:14px">
+          <label for="accommodation_member_count"><b>Accommodation Member Count</b></label>
+          <input type="number" id="accommodation_member_count" name="accommodation_member_count" min="1" step="1" value="1" placeholder="Enter number of members" style="width:100%;margin-top:8px">
+          <small class="muted">Accommodation fee: ₹150 per head</small>
+          <div id="accommodationAmount" class="upi-id" style="margin-top:10px">Total Accommodation Amount: ₹150</div>
+        </div>
+        <div class="accommodation-pay-options">
+          <a class="pay-app" id="accomPhonePe" href="#" target="_blank" rel="noopener">PhonePe</a>
+          <a class="pay-app" id="accomGPay" href="#" target="_blank" rel="noopener">Google Pay</a>
+          <a class="pay-app" id="accomPaytm" href="#" target="_blank" rel="noopener">Paytm</a>
+          <a class="pay-app" id="accomUPI" href="#" target="_blank" rel="noopener">Other UPI Apps</a>
+        </div>
+        <p class="upi-note">Choose your preferred UPI app. If the selected app is not installed, use another option.</p>
+        
+<div class="accommodation-utr" style="margin-top:16px">
+  <label for="accommodation_utr"><b>Accommodation UTR / Transaction Reference No.</b></label>
+  <input
+    type="text"
+    id="accommodation_utr"
+    name="accommodation_utr"
+    placeholder="Enter accommodation payment UTR number"
+    autocomplete="off"
+    style="width:100%;margin-top:8px"
+  >
+  <small class="muted">Enter the UTR/reference number after completing the accommodation payment.</small>
+</div>
+
+<p class="muted small">After payment, enter the UTR/payment reference in the registration form.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="payment-card rv" style="margin:18px 0 0">
+  <h3>Event Payment</h3>
+  <p>After selecting your event, complete the event payment through the official BillDesk payment page.</p>
+  <a class="payment-btn"
+     href="https://payments.billdesk.com/bdcollect/bd/nationaleducationalsocietyjawaharlalnehrunewcolleg/22697"
+     target="_blank" rel="noopener noreferrer">
+    Proceed to BillDesk Payment
+  </a>
+  <p class="payment-note">The payment page opens in a new tab. Complete the payment, return here, and enter your UPI Transaction ID / UTR below before submitting your registration.</p>
+</div>
+
+
+
+
+<input id="f_payref" placeholder="UPI Transaction ID / UTR (after payment)">
+<button class="btn register-submit" type="submit" style="border:0;cursor:pointer;margin:0">Submit Registration</button>
+<div id="msg"></div>
+</form>
+</div>
+</section>
 
 <div id="lb" class="hide" aria-hidden="true">
   <button id="lbBack" type="button" aria-label="Back to page">← Back</button>
   <img alt="">
 </div>
-
-
-<!-- REGISTRATION & RULEBOOKS -->
-<section id="register" class="registration-container rv">
-  <h2>Registrations &amp; Rulebooks</h2>
-  <p class="reg-intro">Complete your event registration using the Google Form. Event rulebooks are available in the official Drive folder.</p>
-  <div class="registration-grid">
-    <div class="registration-card">
-      <h3>Event Registration</h3>
-      <p>Click below to open the registration form and submit your details for PLASMA 2K26.</p>
-      <a class="registration-btn" href="https://forms.gle/hzqDNQQ7qUz7Gu9J8" target="_blank" rel="noopener noreferrer">Register Now ↗</a>
-    </div>
-    <div class="registration-card">
-      <h3>Event Rulebooks</h3>
-      <p>Open the official Google Drive folder to view the rulebooks for all PLASMA 2K26 events.</p>
-      <a class="registration-btn drive" href="https://drive.google.com/drive/folders/1brmwgbdmdFyk7OI6nIK1DOHNFcjJpMZd?usp=drive_link" target="_blank" rel="noopener noreferrer">Open Rulebooks ↗</a>
-    </div>
-  </div>
-</section>
 
 <section id="venue">
 <h2>Venue</h2>
@@ -457,6 +463,67 @@ function draw(){if(!x)return;x.clearRect(0,0,W,H);P.forEach(function(p){p.y-=p.v
 x.fillStyle="rgba("+p.c+",.7)";x.beginPath();x.arc(p.x,p.y,p.r,0,6.3);x.fill()});requestAnimationFrame(draw)}
 if(!still&&x)draw();
 
+// ===== SUPABASE CONFIG: replace with your own values =====
+var SB_URL="https://ovuvtarrhfoyekbpppwh.supabase.co",SB_KEY="sb_publishable_Z6dLzghS7u2xUjOy93BxwQ_R2QhWikq";
+// ===== UPI CONFIG: paste your real UPI ID (VPA) between the quotes below, e.g. "plasma2k26@okhdfcbank" =====
+var UPI_VPA="",UPI_NAME="PLASMA 2K26"; var ACCOMMODATION_UPI_VPA="9380795731-2@axl",ACCOMMODATION_UPI_NAME="PLASMA 2K26 Accommodation";
+function setupAccommodationPayment(){
+  var vpa=ACCOMMODATION_UPI_VPA;
+  var display=document.getElementById("accommodationUpiDisplay");
+  var countEl=document.getElementById("accommodation_member_count");
+  var amountEl=document.getElementById("accommodationAmount");
+  var g=document.getElementById("accomGPay"),p=document.getElementById("accomPhonePe"),t=document.getElementById("accomPaytm"),u=document.getElementById("accomUPI");
+  if(display) display.textContent=vpa;
+  function update(){
+    var count=Math.max(1,parseInt((countEl&&countEl.value)||1,10)||1);
+    var amount=count*150;
+    if(amountEl) amountEl.textContent="Total Accommodation Amount: ₹"+amount+" (₹150 × "+count+" member"+(count===1?"":"s")+")";
+    var params="pa="+encodeURIComponent(vpa)+"&pn="+encodeURIComponent(ACCOMMODATION_UPI_NAME)+"&am="+amount+"&cu=INR&tn="+encodeURIComponent("PLASMA2K26 Accommodation - "+count+" member(s)");
+    if(g) g.href="tez://upi/pay?"+params;
+    if(p) p.href="phonepe://pay?"+params;
+    if(t) t.href="paytmmp://pay?"+params;
+    if(u) u.href="upi://pay?"+params;
+  }
+  if(countEl) countEl.addEventListener("input",update);
+  [g,p,t,u].forEach(function(btn){
+    if(btn) btn.addEventListener("click",function(ev){
+      update();
+      if(!vpa || vpa.indexOf("REPLACE_WITH_")===0){
+        ev.preventDefault();
+        alert("Accommodation UPI ID is not configured yet.");
+      }
+    });
+  });
+  update();
+}
+
+var SAMPLE=[
+{id:1,name:"Line Follower",track:"Robotics",description:"Build an autonomous bot that follows the track line fastest.",event_date:"2026-10-27",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/line-follower.pdf"},
+{id:2,name:"Robo Race",track:"Robotics",description:"Navigate your bot through the obstacle track against the clock.",event_date:"2026-10-27",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/robo-race.pdf"},
+{id:3,name:"Robo Tug of War",track:"Robotics",description:"Pit your bot's pulling power against a rival in a head-to-head tug.",event_date:"2026-10-27",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/robo-tug-of-war.pdf"},
+{id:4,name:"H/W Hackathon + PCB Design",track:"Code & Compute",description:"Design a PCB and build a working hardware prototype against the clock.",event_date:"2026-10-27",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/hw-hackathon-pcb-design.pdf"},
+{id:5,name:"Sumo",track:"Robotics",description:"Push your opponent's bot out of the ring.",event_date:"2026-10-28",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/sumo.pdf"},
+{id:6,name:"Soccer",track:"Robotics",description:"Bot-vs-bot soccer knockout matches.",event_date:"2026-10-28",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/soccer.pdf"}];
+var COORDS=[{n:"Thrishul Kumar BS",p:"9380795731",d:"93807 95731"},{n:"Vivek GK",p:"7411563037",d:"74115 63037"},{n:"Nimitha Sindhe",p:"9035316490",d:"90353 16490"}];
+var EV=[],live=SB_URL.indexOf("YOUR-")<0;
+function esc(t){return String(t==null?"":t).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+var ICONS={
+ robot:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><rect x="4" y="9" width="16" height="10" rx="2"/><circle cx="9" cy="14" r="1.4" fill="#ff3d8b"/><circle cx="15" cy="14" r="1.4" fill="#ff3d8b"/><path d="M12 9V5m0 0a1.6 1.6 0 1 0 0-3.2A1.6 1.6 0 0 0 12 5Z"/><path d="M4 13H2m20 0h-2"/></svg>',
+ line:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><path d="M3 17c4-8 8 8 12 0s4-8 6-3"/><circle cx="6" cy="7" r="2"/></svg>',
+ soccer:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="m12 7 3.5 2.5-1.3 4H9.8l-1.3-4Z"/></svg>',
+ sumo:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><circle cx="12" cy="12" r="9" stroke-dasharray="3 3"/><circle cx="12" cy="12" r="3" fill="#ff3d8b" stroke="none"/></svg>',
+ car:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><path d="M3 15l1.5-5A2 2 0 0 1 6.4 8.5h11.2A2 2 0 0 1 19.5 10L21 15"/><rect x="2.5" y="15" width="19" height="4" rx="1.5"/><circle cx="7" cy="19" r="1.6" fill="#ff3d8b"/><circle cx="17" cy="19" r="1.6" fill="#ff3d8b"/></svg>',
+ hack:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="m8 9-2.5 2.5L8 14M16 9l2.5 2.5L16 14m-3-6-2 10"/></svg>',
+ paper:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9 12h6M9 16h6M9 8h2"/></svg>',
+ gen:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><path d="M12 3 3 7.5l9 4.5 9-4.5Z"/><path d="M3 12l9 4.5 9-4.5M3 16.5 12 21l9-4.5"/></svg>',
+ tug:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><path d="M2 12h8m4 0h8"/><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="12" r="2.4"/><path d="m9 9 1.5 3L9 15M15 9l-1.5 3L15 15"/></svg>'
+};
+var GALLERY=["images/gallery/1","images/gallery/2","images/gallery/3","images/gallery/4","images/gallery/5","images/gallery/6","images/gallery/7","images/gallery/8"];
+var EXTS=["jpg","jpeg","png","webp"];
+window.imgNext=function(img){var i=(+img.dataset.i||0)+1;if(i<EXTS.length){img.dataset.i=i;img.src=img.dataset.base+"."+EXTS[i]}else{img.onerror=null;var f=img.closest("figure");(f||img).remove()}};
+function slug(n){return String(n||"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"")}
+function evImg(e){var b="images/events/"+slug(e.name);return'<img class="eimg" alt="'+esc(e.name)+'" src="'+b+'.jpg" data-base="'+b+'" data-i="0" onerror="imgNext(this)" onload="if(this.nextElementSibling)this.nextElementSibling.style.display=\'none\'">'}
+
 var pictureOpen=false;
 function openPicture(src,alt){
   var lb=document.getElementById("lb");
@@ -505,8 +572,137 @@ function iconFor(name){name=(name||"").toLowerCase();
  if(name.indexOf("paper")>-1)return ICONS.paper;
  return ICONS.gen}
 
-buildGallery();
+function hdr(){return{apikey:SB_KEY,Authorization:"Bearer "+SB_KEY,"Content-Type":"application/json"}}
+async function loadEvents(){
+ var st=document.getElementById("evStatus");
+ try{if(live){var r=await fetch(SB_URL+"/rest/v1/events?select=*&order=event_date",{headers:hdr(),cache:"no-store"});
+   if(!r.ok){var t="";try{t=(await r.json()).message||""}catch(x){}st.textContent="Live events unavailable; showing the configured event list.";EV=SAMPLE}
+   else{EV=await r.json();if(!EV.length)EV=SAMPLE}}
+  else EV=SAMPLE}
+ catch(e){EV=SAMPLE}
+ drawEvents();updatePool();
+ var sel=document.getElementById("f_event");EV.forEach(function(e){var o=document.createElement("option");o.value=e.id;o.textContent=e.name;sel.appendChild(o)});
+ sel.onchange=updatePay;
+}
+function fd(d){return d=="TBA"?"To be announced":new Date(d+"T00:00:00").toLocaleDateString("en-IN",{day:"numeric",month:"short"})}
+function drawEvents(){document.getElementById("event-list").innerHTML=EV.map(function(e){
+ var when=fd(e.event_date||"TBA");
+ var fee=(e.fee==null)?"TBA":(e.fee>0?("₹"+e.fee):"Free");
+ var coord="";
+ return'<div class="card ev rv in" data-open="'+e.id+'" style="cursor:pointer">'+evImg(e)+'<div class="eicon">'+iconFor(e.name)+'</div><h3>'+esc(e.name)+'</h3><p><b>'+esc(e.track)+'</b></p><div class="meta">'+when+' · '+esc(e.venue||"Venue to be announced")+'</div><p>'+esc(e.description)+'</p><div class="meta">Team: '+esc(e.team_size)+' · Fee: '+fee+' · Prize: '+esc(e.prize||"To be announced")+'</div>'+coord+'<div class="rulebook-wrap">'+(e.reg_open?'<a class="btn" href="#register" data-pick="'+e.id+'">Register</a>':'<p>Registration closed</p>')+('<a href="'+esc(e.rulebook_url||("rulebooks/"+slug(e.name)+".pdf"))+'" target="_blank" rel="noopener noreferrer" class="rulebook-btn" onclick="event.stopPropagation()">📘 Rulebook</a>')+'</div></div>'}).join("")}
+function updatePool(){var el=document.getElementById("poolStat");if(el)el.textContent="₹1,00,000"}
+function updatePay(){var id=+document.getElementById("f_event").value,e=EV.filter(function(x){return x.id===id})[0],box=document.getElementById("payBox");
+ if(!e||!e.fee||e.fee<=0){box.classList.add("hide");return}
+ box.classList.remove("hide");document.getElementById("payFee").textContent="\u20b9"+e.fee;
+ var note=encodeURIComponent("PLASMA2K26-"+e.name),link="upi://pay?pa="+encodeURIComponent(UPI_VPA)+"&pn="+encodeURIComponent(UPI_NAME)+"&am="+e.fee+"&cu=INR&tn="+note;
+ var btn=document.getElementById("payBtn");if(UPI_VPA){btn.href=link;btn.style.display="inline-block"}else{btn.style.display="none"}
+ var img=document.getElementById("payQr");img.style.display="inline-block";img.onerror=function(){img.style.display="none"}}
+document.getElementById("event-list").addEventListener("click",function(ev){
+ var pick=ev.target.dataset.pick;if(pick){document.getElementById("f_event").value=pick;updatePay();return}
+ var card=ev.target.closest("[data-open]");if(card){document.getElementById("f_event").value=card.dataset.open;updatePay();document.getElementById("register").scrollIntoView({behavior:"smooth"})}
+});
+document.getElementById("rf").addEventListener("submit",async function(ev){ev.preventDefault();
+ var m=document.getElementById("msg"),body={event_id:+document.getElementById("f_event").value,name:f_name.value.trim(),email:f_email.value.trim(),phone:f_phone.value.trim(),college:f_college.value.trim(),team_members:f_team.value.trim(),payment_ref:f_payref.value.trim(),accommodation_required:(document.querySelector('input[name="accommodation"]:checked')||{}).value||null,accommodation_member_count:parseInt((document.getElementById("accommodation_member_count")||{}).value||"0",10)||null,accommodation_amount:(parseInt((document.getElementById("accommodation_member_count")||{}).value||"0",10)||0)*150,accommodation_utr:(document.getElementById("accommodation_utr")||{}).value||null};
+ if(!live){m.textContent="Demo mode: add your Supabase URL and key to save registrations.";return}
+ try{var r=await fetch(SB_URL+"/rest/v1/registrations",{method:"POST",headers:Object.assign(hdr(),{Prefer:"return=minimal"}),body:JSON.stringify(body)});
+ m.textContent=r.ok?"Registered! See you at PLASMA 2K26.":(r.status===409?"You are already registered for this event.":"Something went wrong. Please try again.");if(r.ok)this.reset()}
+ catch(e){m.textContent="Network error. Please try again."}});
+setupAccommodationPayment();loadEvents();buildGallery();
+var as=document.getElementById("aboutShots");if(as)as.addEventListener("click",function(ev){var im=ev.target.closest("img");if(!im)return;openPicture(im.src,im.alt||"PLASMA 2K26 photo")});
+var q=new URLSearchParams(location.search).get("event");
+if(q){setTimeout(function(){var f=document.getElementById("f_event");f.value=q;updatePay();document.getElementById("register").scrollIntoView()},600)}
 })();
 </script>
+
+<script>
+document.addEventListener("change", function(e){
+  if(e.target && e.target.name === "accommodation" && e.target.checked){
+    document.querySelectorAll('input[name="accommodation"]').forEach(function(cb){
+      if(cb !== e.target) cb.checked = false;
+    });
+  }
+});
+</script>
+
+
+<script>
+(function(){
+  const yes = document.getElementById("accommodation_yes");
+  const no = document.getElementById("accommodation_no");
+  const box = document.getElementById("accommodationPayment");
+  const upiText = document.getElementById("accommodationUpiId");
+  const payBtn = document.getElementById("accommodationPayBtn");
+  const accommodationVpa = (typeof ACCOMMODATION_UPI_VPA !== "undefined") ? ACCOMMODATION_UPI_VPA : "";
+
+  function updateAccommodation(){
+    if(!yes) return;
+
+    if(yes.checked){
+      if(box) box.classList.remove("hide");
+
+      if(upiText) upiText.textContent = accommodationVpa || "Accommodation UPI ID not configured";
+      if(payBtn){
+        if(accommodationVpa && accommodationVpa.indexOf("REPLACE_WITH_") !== 0){
+          payBtn.href = "upi://pay?pa=" + encodeURIComponent(accommodationVpa) +
+            "&pn=" + encodeURIComponent("PLASMA 2K26 Accommodation");
+          // Payment app buttons below handle the accommodation payment redirect.
+        }else{
+          payBtn.href = "#";
+          payBtn.textContent = "Accommodation UPI ID Pending";
+        }
+      }
+    }else if(box){
+      box.classList.add("hide");
+    }
+  }
+
+  [yes,no].forEach(function(el){
+    if(el) el.addEventListener("change", updateAccommodation);
+  });
+
+  window.getAccommodationRequired = function(){
+    const selected = document.querySelector('input[name="accommodation"]:checked');
+    return selected ? selected.value : "";
+  };
+})();
+</script>
+
+
+<script>
+(function(){
+  var form=document.getElementById("rf");
+  if(!form) return;
+  form.addEventListener("submit",function(e){
+    var selected=document.querySelector('input[name="accommodation"]:checked');
+    if(!selected){
+      e.preventDefault();
+      var m=document.getElementById("msg");
+      if(m) m.textContent="Please select YES or NO for accommodation.";
+    }
+  },true);
+})();
+</script>
+
+
+<script>
+(function(){
+  var form=document.getElementById("rf");
+  if(!form) return;
+  form.addEventListener("submit",function(e){
+    var selected=document.querySelector('input[name="accommodation"]:checked');
+    var utr=document.getElementById("accommodation_utr");
+    if(selected && selected.value==="YES" && (!utr || !utr.value.trim())){
+      e.preventDefault();
+      if(utr){
+        utr.focus();
+        utr.style.borderColor="var(--gold)";
+      }
+      var m=document.getElementById("msg");
+      if(m) m.textContent="Please enter the accommodation payment UTR number.";
+    }
+  },true);
+})();
+</script>
+
 </body>
 </html>
