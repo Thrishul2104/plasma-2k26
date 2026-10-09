@@ -207,7 +207,14 @@ body::before{
 .registration-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:11px 18px;border-radius:8px;background:linear-gradient(90deg,#ff3d8b,#9b5cff);color:#fff;font-weight:700}
 .registration-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
 .registration-btn.drive{background:linear-gradient(90deg,#9b5cff,#ff3d8b)}
-
+.container {
+  display: flex;
+  justify-content: center; /* Centers cards horizontally */
+  align-items: center;     /* Centers cards vertically if container has height */
+  gap: 24px;              /* Adds clean spacing between the two cards */
+  flex-wrap: wrap;         /* Ensures responsiveness on smaller screens */
+  text-align: center;      /* Centers the text inside the containers */
+}
 </style>
 </style>
 
