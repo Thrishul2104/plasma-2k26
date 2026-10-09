@@ -84,8 +84,6 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--mag);box
 
 .eicon{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,rgba(255,61,139,.18),rgba(155,92,255,.18));display:flex;align-items:center;justify-content:center;margin-bottom:12px}
 .eicon svg{width:30px;height:30px}
-.ev .coord{font-size:13px;color:var(--mu);margin-top:6px}
-.ev .coord a{color:var(--gold);text-decoration:none}
 .poolwrap{text-align:center;margin:6px 0 30px}
 .poolwrap b{display:block;font-size:15px;color:var(--mu);letter-spacing:1px;text-transform:uppercase}
 .poolwrap span{font-size:30px;color:var(--gold);font-weight:700}
@@ -153,13 +151,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--mag);box
 @media(max-width:700px){.blogo small{font-size:7px;letter-spacing:.8px}.bmid b{font-size:clamp(11px,3.2vw,17px);letter-spacing:.5px}.bmid span{font-size:8px;letter-spacing:1px}}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 
-.payment-card{max-width:720px;margin:0 auto;text-align:center;background:var(--card);border:1px solid #6b2a44;border-radius:14px;padding:28px;box-shadow:0 12px 35px rgba(255,61,139,.12)}
-.payment-card h3{color:var(--mag);font-size:22px;margin:0 0 8px}
-.payment-card p{color:var(--mu);margin:8px 0 18px}
-.payment-btn{display:inline-block;margin-top:8px;padding:13px 30px;border-radius:7px;text-decoration:none;font-weight:700;background:linear-gradient(90deg,var(--mag),var(--vio));color:#fff;transition:transform .25s,box-shadow .25s}
-.payment-btn:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(255,61,139,.5)}
-.payment-note{font-size:12px!important;color:#9f8ca9!important;margin-top:14px!important}
-.rulebook-wrap{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.rulebook-wrap{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:14px;text-align:center}.rulebook-wrap .btn,.rulebook-wrap .rulebook-btn{margin-left:auto;margin-right:auto;text-align:center}
 .rulebook-btn{display:inline-block;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;color:#fff;background:linear-gradient(90deg,var(--mag),var(--vio));transition:.25s}
 .rulebook-btn:hover{transform:translateY(-2px);box-shadow:0 7px 20px rgba(255,61,139,.35)}
 
@@ -194,40 +186,34 @@ body::before{
 .bmid>span:not(.status-chip){display:block;margin-top:4px;color:var(--mu);font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
 @media(max-width:700px){.blogo small{font-size:6px;letter-spacing:.55px}.bmid b{font-size:clamp(10px,3.2vw,16px);letter-spacing:0}.bmid>span:not(.status-chip){font-size:7px;letter-spacing:.8px}}
 
-
-
-
-
 <style>
-
+.member-count-box input{font-size:1rem;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.22);color:inherit;border-radius:10px;padding:12px 14px;box-sizing:border-box}
 .status-chip{display:inline-flex;align-items:center;gap:8px;position:relative;left:-10px}.status-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;flex:0 0 10px;box-shadow:0 0 0 3px rgba(34,197,94,.18),0 0 12px rgba(34,197,94,.95);animation:statusBlink .9s ease-in-out infinite}@keyframes statusBlink{0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 3px rgba(34,197,94,.18),0 0 12px rgba(34,197,94,.95)}50%{opacity:.25;transform:scale(.78);box-shadow:0 0 0 5px rgba(34,197,94,.06),0 0 3px rgba(34,197,94,.35)}}
+.coordinator-top{margin:20px auto 34px;max-width:1100px;padding:22px;border:1px solid #2a1638;border-radius:18px;background:rgba(20,10,30,.72);box-shadow:0 12px 35px rgba(0,0,0,.18)}
+.coordinator-top h2{text-align:center;margin:0 0 18px;color:var(--gold)}
+.coordinator-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.coordinator-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:16px;border:1px solid #3a204d;border-radius:14px;background:rgba(255,255,255,.035);text-align:center}
+.coordinator-card b{font-size:1rem}.coordinator-card a{color:var(--tx);text-decoration:none}.coordinator-card a:hover{text-decoration:underline}
+@media(max-width:700px){.coordinator-grid{grid-template-columns:1fr}}
 
-/* ===== Event Coordinators ===== */
-.coordinators-section{margin:28px auto 34px;padding:34px 30px 30px;max-width:1000px;background:rgba(10,5,18,.72);border:1px solid #4a285e;border-radius:22px;position:relative;overflow:hidden;text-align:center}
-.coordinators-section:before{content:"";position:absolute;left:12px;top:12px;width:3px;height:20px;background:var(--mag);box-shadow:0 0 12px rgba(255,61,139,.55)}
-.coordinators-title{margin:0;color:var(--gold);font-family:Georgia,serif;font-size:42px;font-weight:700}
-.coordinators-line{width:124px;height:4px;margin:24px auto 24px;background:linear-gradient(90deg,var(--mag),var(--gold))}
-.coordinators-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.coordinator-card{background:rgba(28,19,39,.9);border:1px solid #5a326e;border-radius:20px;padding:28px 18px 24px;min-height:125px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-sizing:border-box}
-.coordinator-name{font-size:22px;font-weight:800;color:#f4edf8;margin-bottom:18px}
-.coordinator-phone{font-size:21px;color:#e8ddec;letter-spacing:.3px}
-@media(max-width:760px){.coordinators-section{padding:28px 18px}.coordinators-title{font-size:32px}.coordinators-grid{grid-template-columns:1fr}.coordinator-card{min-height:110px}}
+/* Static registration container */
+.registration-container{margin:34px 0;padding:28px;border:1px solid rgba(224,176,74,.28);border-radius:18px;background:linear-gradient(135deg,rgba(22,10,31,.96),rgba(15,7,24,.96));box-shadow:0 18px 45px rgba(0,0,0,.25)}
+.registration-container h2{margin:0 0 8px;color:#e0b04a}
+.registration-container .reg-intro{color:#b9a6c4;margin:0 0 22px;line-height:1.6}
+.registration-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.registration-card{padding:22px;border:1px solid #3a1d4a;border-radius:14px;background:#160a1f}
+.registration-card h3{margin:0 0 8px;color:#f3e9f5}
+.registration-card p{margin:0 0 16px;color:#b9a6c4;line-height:1.55}
+.registration-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:11px 18px;border-radius:8px;background:linear-gradient(90deg,#ff3d8b,#9b5cff);color:#fff;font-weight:700}
+.registration-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.registration-btn.drive{background:linear-gradient(90deg,#9b5cff,#ff3d8b)}
+
 </style>
 </style>
 
 <style>
-.accommodation-section .card{position:relative;overflow:hidden}
-.accommodation-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:22px}
-.accommodation-option{display:flex;align-items:center;gap:14px;padding:18px 20px;border:1px solid rgba(224,176,74,.25);border-radius:16px;background:rgba(255,255,255,.035);cursor:pointer;transition:.25s}
-.accommodation-option:hover{transform:translateY(-2px);border-color:rgba(224,176,74,.65);background:rgba(255,255,255,.06)}
-.accommodation-option input{width:20px;height:20px;accent-color:#e0b04a}
-.accommodation-option span{display:flex;flex-direction:column;gap:4px}
-.accommodation-option small{color:#bcaec4;font-size:12px}
-
-
-
-
-@media(max-width:700px){.accommodation-options{grid-template-columns:1fr}}
+.small{font-size:12px}
+@media(max-width:700px){}
 </style>
 
 
@@ -246,14 +232,7 @@ body::before{
 .brandbar .blogo small{display:none}
 @media(max-width:700px){.brandbar .lg{width:78px;height:78px;flex-basis:78px;border-radius:18px;padding:6px}.brandbar{grid-template-columns:64px 1fr 64px;gap:4px;padding:8px 7px}.brandbar .blogo:first-child{justify-content:flex-start}.brandbar .blogo.right{justify-content:flex-end}.brandbar .lg{width:56px;height:56px;flex-basis:56px;padding:4px}.brandbar .bmid{padding:0 3px}.brandbar .bmid b{font-size:11px;white-space:normal}.brandbar .bmid span{font-size:7px;letter-spacing:.5px;white-space:normal}.brandbar .status-chip{font-size:7px;letter-spacing:.8px}}
 
-.registration-container{max-width:920px;margin:0 auto;background:linear-gradient(180deg,rgba(22,10,31,.96),rgba(16,7,24,.96));border:1px solid #6b2a44;border-radius:18px;padding:28px;box-shadow:0 18px 45px rgba(0,0,0,.28),0 0 35px rgba(255,61,139,.08)}
-.registration-container form{max-width:none;margin:0;display:grid;gap:14px}
-.registration-container .accommodation-section{padding:0;margin:4px 0 0;max-width:none}
-.registration-container .accommodation-section>.card{background:rgba(10,4,16,.45);border-color:#3a1d4a;box-shadow:none}
-.registration-container .payment-card{max-width:none}
-.registration-container #f_payref{margin-top:2px}
-.registration-container .register-submit{width:100%;margin-top:4px}
-@media(max-width:700px){.registration-container{padding:18px;border-radius:14px}.brandbar{margin-bottom:12px}}
+.@media(max-width:700px){.brandbar{margin-bottom:12px}}
 </style>
 
 </head>
@@ -261,14 +240,14 @@ body::before{
 <div id="bar"></div>
 <div class="brandbar">
 <div class="blogo"><div class="lg"><img src="logos/vtu.png" alt="VTU logo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb">NES</span></div><small>National Education Society &middot; Shivamogga</small></div>
-<div class="bmid"><b>Jawaharlal Nehru New College of Engineering</b><span>Savalanga Road, Navule, Shimoga</span><span class="status-chip"><i class="status-dot"></i>Registrations Opened</span></div>
+<div class="bmid"><b>Jawaharlal Nehru New College of Engineering</b><span>Savalanga Road, Navule, Shimoga</span><span class="status-chip"><i class="status-dot"></i>Registrations Online</span></div>
 <div class="blogo right"><div class="lg"><img src="logos/jnnce.png" alt="JNNCE logo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb">JNNCE</span></div><small>JNNCE &middot; Shivamogga</small></div>
 </div>
-<nav><b>PLASMA 2K26</b><div><a href="#about">About</a><a href="#college">College</a><a href="#events">Events</a><a href="#register">Register</a><a href="#venue">Venue</a><a href="admin.html" style="border:1px solid var(--gold);color:var(--gold);padding:5px 14px;border-radius:20px;font-size:13px">Admin</a></div></nav>
+<nav><b>PLASMA 2K26</b><div><a href="#about">About</a><a href="#college">College</a><a href="#events">Events</a><a href="#register">Register</a><a href="#venue">Venue</a></div></nav>
 
 <header class="hero">
 <canvas id="fx"></canvas>
-<small>Department of Electronics and communication engineering presents</small>
+<small>Jawaharlal Nehru New College of Engineering presents</small>
 <h1>PLASMA 2K26</h1>
 <span class="tag">&lt;&lt;&lt; NATIONAL LEVEL TECHFEST &gt;&gt;&gt;</span>
 <div class="date">27 &amp; 28 October 2026</div>
@@ -282,38 +261,22 @@ body::before{
 <div class="stat"><b>Open</b><span>To students across India</span></div>
 </div>
 
+<section id="coordinators" class="coordinator-top">
+<h2>Event Coordinators</h2>
+<div class="coordinator-grid">
+<div class="coordinator-card"><b>Thrishul Kumar BS</b><a href="tel:+919380795731">93807 95731</a></div>
+<div class="coordinator-card"><b>Vivek GK</b><a href="tel:+917411563037">74115 63037</a></div>
+<div class="coordinator-card"><b>Nimitha Sindhe</b><a href="tel:+919035316490">90353 16490</a></div>
+</div></section>
+
 <section id="college">
-
-
-<!-- EVENT COORDINATORS: placed before About JNNCE -->
-<section class="coordinators-section rv" id="eventCoordinators">
-  <h2 class="coordinators-title">Event Coordinators</h2>
-  <div class="coordinators-line"></div>
-  <div class="coordinators-grid">
-    <div class="coordinator-card rv">
-      <div class="coordinator-name">Vivek GK</div>
-      <div class="coordinator-phone">74115 63037</div>
-    </div>
-   
-   <div class="coordinator-card rv">
-      <div class="coordinator-name">Thrishul Kumar BS</div>
-      <div class="coordinator-phone">93807 95731</div>
-    </div>
-   
-    <div class="coordinator-card rv">
-      <div class="coordinator-name">Nimitha Sindhe</div>
-      <div class="coordinator-phone">90353 16490</div>
-    </div>
-  </div>
-</section>
-
 <h2>About JNNCE</h2>
 <p class="about rv">Jawaharlal Nehru New College of Engineering (JNNCE), Shivamogga, is an engineering institution affiliated to Visvesvaraya Technological University (VTU), Belagavi. PLASMA 2K26 is hosted on its campus on Savalanga Road, Navule, bringing together students, coordinators and faculty from across departments to run the fest.</p>
 <div class="about-shots rv">
-<img src="images/gallery/1.jpg" alt="JNNCE campus during a PLASMA fest" loading="lazy" data-base="images/gallery/1" data-i="0" data-about-fallback="0" onerror="aboutImgFallback(this)">
-<img src="images/gallery/2.jpg" alt="Students at JNNCE taking part in a fest activity" loading="lazy" data-base="images/gallery/2" data-i="0" data-about-fallback="1" onerror="aboutImgFallback(this)">
-<img src="images/gallery/3.jpg" alt="JNNCE event space set up for PLASMA" loading="lazy" data-base="images/gallery/3" data-i="0" data-about-fallback="2" onerror="aboutImgFallback(this)">
-<img src="images/gallery/4.jpg" alt="A past PLASMA event held at JNNCE" loading="lazy" data-base="images/gallery/4" data-i="0" data-about-fallback="3" onerror="aboutImgFallback(this)">
+<img src="images/gallery/1.jpg" alt="JNNCE campus during a PLASMA fest" loading="lazy" data-base="images/gallery/1" data-i="0" onerror="imgNext(this)">
+<img src="images/gallery/2.jpg" alt="Students at JNNCE taking part in a fest activity" loading="lazy" data-base="images/gallery/2" data-i="0" onerror="imgNext(this)">
+<img src="images/gallery/3.jpg" alt="JNNCE event space set up for PLASMA" loading="lazy" data-base="images/gallery/3" data-i="0" onerror="imgNext(this)">
+<img src="images/gallery/4.jpg" alt="A past PLASMA event held at JNNCE" loading="lazy" data-base="images/gallery/4" data-i="0" onerror="imgNext(this)">
 </div>
 </section>
 
@@ -321,90 +284,110 @@ body::before{
 <h2>Some Glimpses of PLASMA</h2>
 <p class="about rv">PLASMA 2K26 is the flagship technical fest of Jawaharlal Nehru New College of Engineering (JNNCE), Shivamogga. Step through the gate, take on technical challenges, pitch your ideas, and compete for cash prizes alongside students from across the country.</p>
 <div class="about-shots rv" id="aboutShots">
-<img src="images/about/a1.jpg" data-about-fallback="0" onerror="aboutImgFallback(this)" alt="Faculty viewing a foam-walled maze arena" loading="lazy" data-base="images/about/a1" data-i="0">
-<img src="images/about/a2.jpg" data-about-fallback="1" onerror="aboutImgFallback(this)" alt="Judges watching a robot in an outdoor arena" loading="lazy" data-base="images/about/a2" data-i="0">
-<img src="images/about/a3.jpg" data-about-fallback="2" onerror="aboutImgFallback(this)" alt="Team watching a line follower robot on its track" loading="lazy" data-base="images/about/a3" data-i="0">
-<img src="images/about/a4.jpg" data-about-fallback="3" onerror="aboutImgFallback(this)" alt="Participants gathered around a line follower mat" loading="lazy" data-base="images/about/a4" data-i="0">
-<img src="images/about/a5.jpg" data-about-fallback="4" onerror="aboutImgFallback(this)" alt="Wheeled robot on a tiled arena floor" loading="lazy" data-base="images/about/a5" data-i="0">
-<img src="images/about/a6.jpg" data-about-fallback="5" onerror="aboutImgFallback(this)" alt="Climbing robot at a brick obstacle" loading="lazy" data-base="images/about/a6" data-i="0">
-<img src="images/about/a7.jpg" data-about-fallback="6" onerror="aboutImgFallback(this)" alt="Judges scoring a line follower run" loading="lazy" data-base="images/about/a7" data-i="0">
-<img src="images/about/a8.jpg" data-about-fallback="7" onerror="aboutImgFallback(this)" alt="Tyre-lined robotics arena with spectators" loading="lazy" data-base="images/about/a8" data-i="0">
+<img src="images/about/a1.jpg" alt="Faculty viewing a foam-walled maze arena" loading="lazy">
+<img src="images/about/a2.jpg" alt="Judges watching a robot in an outdoor arena" loading="lazy">
+<img src="images/about/a3.jpg" alt="Team watching a line follower robot on its track" loading="lazy">
+<img src="images/about/a4.jpg" alt="Participants gathered around a line follower mat" loading="lazy">
+<img src="images/about/a5.jpg" alt="Wheeled robot on a tiled arena floor" loading="lazy">
+<img src="images/about/a6.jpg" alt="Climbing robot at a brick obstacle" loading="lazy">
+<img src="images/about/a7.jpg" alt="Judges scoring a line follower run" loading="lazy">
+<img src="images/about/a8.jpg" alt="Tyre-lined robotics arena with spectators" loading="lazy">
 </div>
 </section>
 
 <section id="events">
 <h2>Events</h2>
-<p class="sub rv">All the events at a glance — pick one and register below.</p>
-<p id="evStatus" style="text-align:center;color:var(--mag)"></p>
-<div class="grid" id="event-list"></div>
+<p class="sub rv">All the events at a glance — explore the events and download their rulebooks.</p>
+<div class="grid" id="event-list">
+
+<div class="card ev rv in">
+  <img class="eimg" alt="Line Follower" src="images/events/line-follower.jpg" data-base="images/events/line-follower" data-i="0" onerror="imgNext(this)">
+  <div class="eicon"><svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><path d="M3 17c4-8 8 8 12 0s4-8 6-3"/><circle cx="6" cy="7" r="2"/></svg></div>
+  <h3>Line Follower</h3><p><b>Robotics</b></p>
+  <div class="meta">27 Oct 2026 · Venue to be announced</div>
+  <p>Build an autonomous bot that follows the track line fastest.</p>
+  <div class="meta">Team: 2-4 · Fee: TBA · Prize: To be announced</div>
+  <div class="rulebook-wrap"><a href="rulebooks/line-follower.pdf" target="_blank" rel="noopener noreferrer" class="rulebook-btn">📘 Rulebook</a></div>
+</div>
+
+<div class="card ev rv in">
+  <img class="eimg" alt="Robo Race" src="images/events/robo-race.jpg" data-base="images/events/robo-race" data-i="0" onerror="imgNext(this)">
+  <div class="eicon"><svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><rect x="4" y="9" width="16" height="10" rx="2"/><circle cx="9" cy="14" r="1.4" fill="#ff3d8b"/><circle cx="15" cy="14" r="1.4" fill="#ff3d8b"/><path d="M12 9V5m0 0a1.6 1.6 0 1 0 0-3.2A1.6 1.6 0 0 0 12 5Z"/><path d="M4 13H2m20 0h-2"/></svg></div>
+  <h3>Robo Race</h3><p><b>Robotics</b></p>
+  <div class="meta">27 Oct 2026 · Venue to be announced</div>
+  <p>Navigate your bot through the obstacle track against the clock.</p>
+  <div class="meta">Team: 2-4 · Fee: TBA · Prize: To be announced</div>
+  <div class="rulebook-wrap"><a href="rulebooks/robo-race.pdf" target="_blank" rel="noopener noreferrer" class="rulebook-btn">📘 Rulebook</a></div>
+</div>
+
+<div class="card ev rv in">
+  <img class="eimg" alt="Robo Tug of War" src="images/events/robo-tug-of-war.jpg" data-base="images/events/robo-tug-of-war" data-i="0" onerror="imgNext(this)">
+  <div class="eicon"><svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><path d="M2 12h8m4 0h8"/><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="12" r="2.4"/><path d="m9 9 1.5 3L9 15M15 9l-1.5 3L15 15"/></svg></div>
+  <h3>Robo Tug of War</h3><p><b>Robotics</b></p>
+  <div class="meta">27 Oct 2026 · Venue to be announced</div>
+  <p>Pit your bot's pulling power against a rival in a head-to-head tug.</p>
+  <div class="meta">Team: 2-4 · Fee: TBA · Prize: To be announced</div>
+  <div class="rulebook-wrap"><a href="rulebooks/robo-tug-of-war.pdf" target="_blank" rel="noopener noreferrer" class="rulebook-btn">📘 Rulebook</a></div>
+</div>
+
+<div class="card ev rv in">
+  <img class="eimg" alt="H/W Hackathon + PCB Design" src="images/events/h-w-hackathon-pcb-design.jpg" data-base="images/events/h-w-hackathon-pcb-design" data-i="0" onerror="imgNext(this)">
+  <div class="eicon"><svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="m8 9-2.5 2.5L8 14M16 9l2.5 2.5L16 14m-3-6-2 10"/></svg></div>
+  <h3>H/W Hackathon + PCB Design</h3><p><b>Code &amp; Compute</b></p>
+  <div class="meta">27 Oct 2026 · Venue to be announced</div>
+  <p>Design a PCB and build a working hardware prototype against the clock.</p>
+  <div class="meta">Team: 2-4 · Fee: TBA · Prize: To be announced</div>
+  <div class="rulebook-wrap"><a href="rulebooks/hw-hackathon-pcb-design.pdf" target="_blank" rel="noopener noreferrer" class="rulebook-btn">📘 Rulebook</a></div>
+</div>
+
+<div class="card ev rv in">
+  <img class="eimg" alt="Sumo" src="images/events/sumo.jpg" data-base="images/events/sumo" data-i="0" onerror="imgNext(this)">
+  <div class="eicon"><svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><circle cx="12" cy="12" r="9" stroke-dasharray="3 3"/><circle cx="12" cy="12" r="3" fill="#ff3d8b" stroke="none"/></svg></div>
+  <h3>Sumo</h3><p><b>Robotics</b></p>
+  <div class="meta">28 Oct 2026 · Venue to be announced</div>
+  <p>Push your opponent's bot out of the ring.</p>
+  <div class="meta">Team: 2-4 · Fee: TBA · Prize: To be announced</div>
+  <div class="rulebook-wrap"><a href="rulebooks/sumo.pdf" target="_blank" rel="noopener noreferrer" class="rulebook-btn">📘 Rulebook</a></div>
+</div>
+
+<div class="card ev rv in">
+  <img class="eimg" alt="Soccer" src="images/events/soccer.jpg" data-base="images/events/soccer" data-i="0" onerror="imgNext(this)">
+  <div class="eicon"><svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="m12 7 3.5 2.5-1.3 4H9.8l-1.3-4Z"/></svg></div>
+  <h3>Soccer</h3><p><b>Robotics</b></p>
+  <div class="meta">28 Oct 2026 · Venue to be announced</div>
+  <p>Bot-vs-bot soccer knockout matches.</p>
+  <div class="meta">Team: 2-4 · Fee: TBA · Prize: To be announced</div>
+  <div class="rulebook-wrap"><a href="rulebooks/soccer.pdf" target="_blank" rel="noopener noreferrer" class="rulebook-btn">📘 Rulebook</a></div>
+</div>
+
+</div>
 </section>
 
-<section id="register">
-<h2>Register</h2>
-<p class="sub rv">Fill in your details, select an event, complete the payment, and submit your registration.</p>
-<div class="registration-container">
-<form id="rf">
-<select id="f_event" required><option value="">Select event</option></select>
-<input id="f_name" placeholder="Full name" required>
-<input id="f_email" type="email" placeholder="Email" required>
-<input id="f_phone" placeholder="Phone number">
-<input id="f_college" placeholder="College">
-<textarea id="f_team" rows="2" placeholder="Team members (if any)"></textarea>
 
-<div id="accommodationSection" class="accommodation-section">
-  <div class="card">
-    <div class="eyebrow">TEAM SERVICES</div>
-    <h2>Accommodation Required?</h2>
-    <p class="muted">Select YES if you require accommodation. If YES is selected, use the Google Form below to submit your accommodation details.</p>
-
-    <div class="accommodation-options">
-      <label class="accommodation-option">
-        <input type="checkbox" name="accommodation" value="YES" id="accommodation_yes">
-        <span><b>YES</b><small>Accommodation required</small></span>
-      </label>
-      <label class="accommodation-option">
-        <input type="checkbox" name="accommodation" value="NO" id="accommodation_no">
-        <span><b>NO</b><small>Accommodation not required</small></span>
-      </label>
-    </div>
-
-    <div id="accommodationGoogleForm" class="accommodation-google-form hide" style="margin-top:20px;text-align:center">
-      <p class="muted" style="margin-bottom:12px">Please complete the accommodation registration form:</p>
-      <a id="accommodationGoogleFormLink"
-         class="btn"
-         href="https://forms.gle/X1nSygu3R9hceA2g8"
-         target="_blank"
-         rel="noopener noreferrer">Open Accommodation Google Form ↗</a>
-    </div>
-  </div>
-</div>
-
-
-<div class="payment-card rv" style="margin:18px 0 0">
-  <h3>Event Payment</h3>
-  <p>After selecting your event, complete the event payment through the official BillDesk payment page.</p>
-  <a class="payment-btn"
-     href="https://payments.billdesk.com/bdcollect/bd/nationaleducationalsocietyjawaharlalnehrunewcolleg/22697"
-     target="_blank" rel="noopener noreferrer">
-    Proceed to BillDesk Payment
-  </a>
-  <p class="payment-note">The payment page opens in a new tab. Complete the payment, return here, and enter your UPI Transaction ID / UTR below before submitting your registration.</p>
-</div>
-
-
-
-
-<input id="f_payref" placeholder="UPI Transaction ID / UTR (after payment)">
-<button class="btn register-submit" type="submit" style="border:0;cursor:pointer;margin:0">Submit Registration</button>
-<div id="msg"></div>
-</form>
-</div>
-</section>
 
 <div id="lb" class="hide" aria-hidden="true">
   <button id="lbBack" type="button" aria-label="Back to page">← Back</button>
   <img alt="">
 </div>
+
+
+<!-- REGISTRATION & RULEBOOKS -->
+<section id="register" class="registration-container rv">
+  <h2>Registrations &amp; Rulebooks</h2>
+  <p class="reg-intro">Complete your event registration using the Google Form. Event rulebooks are available in the official Drive folder.</p>
+  <div class="registration-grid">
+    <div class="registration-card">
+      <h3>Event Registration</h3>
+      <p>Click below to open the registration form and submit your details for PLASMA 2K26.</p>
+      <a class="registration-btn" href="https://forms.gle/hzqDNQQ7qUz7Gu9J8" target="_blank" rel="noopener noreferrer">Register Now ↗</a>
+    </div>
+    <div class="registration-card">
+      <h3>Event Rulebooks</h3>
+      <p>Open the official Google Drive folder to view the rulebooks for all PLASMA 2K26 events.</p>
+      <a class="registration-btn drive" href="https://drive.google.com/drive/folders/1brmwgbdmdFyk7OI6nIK1DOHNFcjJpMZd?usp=drive_link" target="_blank" rel="noopener noreferrer">Open Rulebooks ↗</a>
+    </div>
+  </div>
+</section>
 
 <section id="venue">
 <h2>Venue</h2>
@@ -458,53 +441,6 @@ function draw(){if(!x)return;x.clearRect(0,0,W,H);P.forEach(function(p){p.y-=p.v
 x.fillStyle="rgba("+p.c+",.7)";x.beginPath();x.arc(p.x,p.y,p.r,0,6.3);x.fill()});requestAnimationFrame(draw)}
 if(!still&&x)draw();
 
-// ===== SUPABASE CONFIG: replace with your own values =====
-var SB_URL="https://ovuvtarrhfoyekbpppwh.supabase.co",SB_KEY="sb_publishable_Z6dLzghS7u2xUjOy93BxwQ_R2QhWikq";
-// ===== UPI CONFIG: paste your real UPI ID (VPA) between the quotes below, e.g. "plasma2k26@okhdfcbank" =====
-var UPI_VPA="",UPI_NAME="PLASMA 2K26";
-var ACCOMMODATION_GOOGLE_FORM_URL="https://forms.gle/X1nSygu3R9hceA2g8";
-var SAMPLE=[
-{id:1,name:"Line Follower",track:"Robotics",description:"Build an autonomous bot that follows the track line fastest.",event_date:"2026-10-27",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/line-follower.pdf"},
-{id:2,name:"Robo Race",track:"Robotics",description:"Navigate your bot through the obstacle track against the clock.",event_date:"2026-10-27",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/robo-race.pdf"},
-{id:3,name:"Robo Tug of War",track:"Robotics",description:"Pit your bot's pulling power against a rival in a head-to-head tug.",event_date:"2026-10-27",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/robo-tug-of-war.pdf"},
-{id:4,name:"H/W Hackathon + PCB Design",track:"Code & Compute",description:"Design a PCB and build a working hardware prototype against the clock.",event_date:"2026-10-27",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/hw-hackathon-pcb-design.pdf"},
-{id:5,name:"Sumo",track:"Robotics",description:"Push your opponent's bot out of the ring.",event_date:"2026-10-28",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/sumo.pdf"},
-{id:6,name:"Soccer",track:"Robotics",description:"Bot-vs-bot soccer knockout matches.",event_date:"2026-10-28",venue:null,team_size:"2-4",fee:null,prize:null,reg_open:true,rulebook_url:"rulebooks/soccer.pdf"}];
-var EV=[],live=SB_URL.indexOf("YOUR-")<0;
-function esc(t){return String(t==null?"":t).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
-var ICONS={
- robot:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><rect x="4" y="9" width="16" height="10" rx="2"/><circle cx="9" cy="14" r="1.4" fill="#ff3d8b"/><circle cx="15" cy="14" r="1.4" fill="#ff3d8b"/><path d="M12 9V5m0 0a1.6 1.6 0 1 0 0-3.2A1.6 1.6 0 0 0 12 5Z"/><path d="M4 13H2m20 0h-2"/></svg>',
- line:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><path d="M3 17c4-8 8 8 12 0s4-8 6-3"/><circle cx="6" cy="7" r="2"/></svg>',
- soccer:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="m12 7 3.5 2.5-1.3 4H9.8l-1.3-4Z"/></svg>',
- sumo:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><circle cx="12" cy="12" r="9" stroke-dasharray="3 3"/><circle cx="12" cy="12" r="3" fill="#ff3d8b" stroke="none"/></svg>',
- car:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><path d="M3 15l1.5-5A2 2 0 0 1 6.4 8.5h11.2A2 2 0 0 1 19.5 10L21 15"/><rect x="2.5" y="15" width="19" height="4" rx="1.5"/><circle cx="7" cy="19" r="1.6" fill="#ff3d8b"/><circle cx="17" cy="19" r="1.6" fill="#ff3d8b"/></svg>',
- hack:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="m8 9-2.5 2.5L8 14M16 9l2.5 2.5L16 14m-3-6-2 10"/></svg>',
- paper:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9 12h6M9 16h6M9 8h2"/></svg>',
- gen:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><path d="M12 3 3 7.5l9 4.5 9-4.5Z"/><path d="M3 12l9 4.5 9-4.5M3 16.5 12 21l9-4.5"/></svg>',
- tug:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d8b" stroke-width="1.6"><path d="M2 12h8m4 0h8"/><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="12" r="2.4"/><path d="m9 9 1.5 3L9 15M15 9l-1.5 3L15 15"/></svg>'
-};
-var ABOUT_FALLBACKS=[
-  "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#17122b"/><stop offset="1" stop-color="#35153d"/></linearGradient></defs><rect width="900" height="600" fill="url(#g)"/><circle cx="700" cy="140" r="95" fill="#ff3d8b" opacity=".18"/><rect x="130" y="170" width="640" height="300" rx="28" fill="#111827" stroke="#ff3d8b" stroke-width="5"/><rect x="205" y="245" width="490" height="125" rx="18" fill="#20283a"/><circle cx="300" cy="307" r="34" fill="#e0b04a"/><circle cx="600" cy="307" r="34" fill="#e0b04a"/><path d="M360 307h180M450 210v-55M420 155h60" stroke="#ff3d8b" stroke-width="12" stroke-linecap="round"/><text x="450" y="535" text-anchor="middle" fill="#fff" font-family="Arial" font-size="34" font-weight="700">PLASMA 2K26 • JNNCE</text></svg>'),
-  "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><rect width="900" height="600" fill="#111827"/><path d="M0 470L900 250V600H0Z" fill="#1e293b"/><path d="M90 430h720" stroke="#e0b04a" stroke-width="8" stroke-dasharray="28 20"/><rect x="270" y="250" width="360" height="140" rx="25" fill="#263044" stroke="#ff3d8b" stroke-width="6"/><circle cx="340" cy="405" r="44" fill="#0b1020" stroke="#e0b04a" stroke-width="8"/><circle cx="560" cy="405" r="44" fill="#0b1020" stroke="#e0b04a" stroke-width="8"/><path d="M350 250l55-90h90l55 90M450 160V105" fill="none" stroke="#ff3d8b" stroke-width="12" stroke-linecap="round"/><text x="450" y="525" text-anchor="middle" fill="#fff" font-family="Arial" font-size="34" font-weight="700">ROBOTICS • TECH FEST</text></svg>'),
-  "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><rect width="900" height="600" fill="#151124"/><path d="M110 510V190h680v320" fill="none" stroke="#ff3d8b" stroke-width="8"/><path d="M180 450c100-220 190 160 290-50s180-120 250-20" fill="none" stroke="#e0b04a" stroke-width="18" stroke-linecap="round"/><circle cx="450" cy="320" r="72" fill="#22263a" stroke="#ff3d8b" stroke-width="8"/><circle cx="425" cy="310" r="12" fill="#fff"/><circle cx="475" cy="310" r="12" fill="#fff"/><path d="M425 350q25 20 50 0" fill="none" stroke="#e0b04a" stroke-width="8" stroke-linecap="round"/><text x="450" y="555" text-anchor="middle" fill="#fff" font-family="Arial" font-size="34" font-weight="700">INNOVATION • JNNCE</text></svg>'),
-  "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><defs><radialGradient id="g"><stop stop-color="#422044"/><stop offset="1" stop-color="#0b1020"/></radialGradient></defs><rect width="900" height="600" fill="url(#g)"/><g fill="none" stroke="#ff3d8b" stroke-width="7"><path d="M80 480h740M150 410h600M230 340h440M310 270h280"/><path d="M170 480V150M730 480V150"/></g><circle cx="450" cy="230" r="82" fill="#182033" stroke="#e0b04a" stroke-width="10"/><path d="M405 230h90M450 185v90" stroke="#ff3d8b" stroke-width="12" stroke-linecap="round"/><text x="450" y="555" text-anchor="middle" fill="#fff" font-family="Arial" font-size="34" font-weight="700">PLASMA 2K26</text></svg>')
-];
-function aboutImgFallback(img){
-  var extIndex=parseInt(img.dataset.i||"0",10);
-  var exts=["jpg","jpeg","png","webp"];
-  if(extIndex<exts.length-1){
-    extIndex++; img.dataset.i=String(extIndex); img.src=img.dataset.base+"."+exts[extIndex]; return;
-  }
-  var i=parseInt(img.getAttribute("data-about-fallback")||"0",10)%ABOUT_FALLBACKS.length;
-  if(img.dataset.fallbackDone)return;
-  img.dataset.fallbackDone="1"; img.onerror=null; img.src=ABOUT_FALLBACKS[i];
-}
-var GALLERY=["images/gallery/1","images/gallery/2","images/gallery/3","images/gallery/4","images/gallery/5","images/gallery/6","images/gallery/7","images/gallery/8"];
-var EXTS=["jpg","jpeg","png","webp"];
-window.imgNext=function(img){var i=(+img.dataset.i||0)+1;if(i<EXTS.length){img.dataset.i=i;img.src=img.dataset.base+"."+EXTS[i]}else{img.onerror=null;var f=img.closest("figure");(f||img).remove()}};
-function slug(n){return String(n||"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"")}
-function evImg(e){var b="images/events/"+slug(e.name);return'<img class="eimg" alt="'+esc(e.name)+'" src="'+b+'.jpg" data-base="'+b+'" data-i="0" onerror="imgNext(this)" onload="if(this.nextElementSibling)this.nextElementSibling.style.display=\'none\'">'}
-
 var pictureOpen=false;
 function openPicture(src,alt){
   var lb=document.getElementById("lb");
@@ -553,88 +489,7 @@ function iconFor(name){name=(name||"").toLowerCase();
  if(name.indexOf("paper")>-1)return ICONS.paper;
  return ICONS.gen}
 
-function hdr(){return{apikey:SB_KEY,Authorization:"Bearer "+SB_KEY,"Content-Type":"application/json"}}
-async function loadEvents(){
- var st=document.getElementById("evStatus");
- try{if(live){var r=await fetch(SB_URL+"/rest/v1/events?select=*&order=event_date",{headers:hdr(),cache:"no-store"});
-   if(!r.ok){var t="";try{t=(await r.json()).message||""}catch(x){}st.textContent="Live events unavailable; showing the configured event list.";EV=SAMPLE}
-   else{EV=await r.json();if(!EV.length)EV=SAMPLE}}
-  else EV=SAMPLE}
- catch(e){EV=SAMPLE}
- drawEvents();updatePool();
- var sel=document.getElementById("f_event");EV.forEach(function(e){var o=document.createElement("option");o.value=e.id;o.textContent=e.name;sel.appendChild(o)});
- sel.onchange=updatePay;
-}
-function fd(d){return d=="TBA"?"To be announced":new Date(d+"T00:00:00").toLocaleDateString("en-IN",{day:"numeric",month:"short"})}
-function drawEvents(){document.getElementById("event-list").innerHTML=EV.map(function(e){
- var when=fd(e.event_date||"TBA");
- var fee=(e.fee==null)?"TBA":(e.fee>0?("₹"+e.fee):"Free");
- return'<div class="card ev rv in" data-open="'+e.id+'" style="cursor:pointer">'+evImg(e)+'<div class="eicon">'+iconFor(e.name)+'</div><h3>'+esc(e.name)+'</h3><p><b>'+esc(e.track)+'</b></p><div class="meta">'+when+' · '+esc(e.venue||"Venue to be announced")+'</div><p>'+esc(e.description)+'</p><div class="meta">Team: '+esc(e.team_size)+' · Fee: '+fee+' · Prize: '+esc(e.prize||"To be announced")+'</div><div class="rulebook-wrap">'+(e.reg_open?'<a class="btn" href="#register" data-pick="'+e.id+'">Register</a>':'<p>Registration closed</p>')+('<a href="'+esc(e.rulebook_url||("rulebooks/"+slug(e.name)+".pdf"))+'" target="_blank" rel="noopener noreferrer" class="rulebook-btn" onclick="event.stopPropagation()">📘 Rulebook</a>')+'</div></div>'}).join("")}
-function updatePool(){var el=document.getElementById("poolStat");if(el)el.textContent="₹1,00,000"}
-function updatePay(){var id=+document.getElementById("f_event").value,e=EV.filter(function(x){return x.id===id})[0],box=document.getElementById("payBox");
- if(!e||!e.fee||e.fee<=0){box.classList.add("hide");return}
- box.classList.remove("hide");document.getElementById("payFee").textContent="\u20b9"+e.fee;
- var note=encodeURIComponent("PLASMA2K26-"+e.name),link="upi://pay?pa="+encodeURIComponent(UPI_VPA)+"&pn="+encodeURIComponent(UPI_NAME)+"&am="+e.fee+"&cu=INR&tn="+note;
- var btn=document.getElementById("payBtn");if(UPI_VPA){btn.href=link;btn.style.display="inline-block"}else{btn.style.display="none"}
- var img=document.getElementById("payQr");img.style.display="inline-block";img.onerror=function(){img.style.display="none"}}
-document.getElementById("event-list").addEventListener("click",function(ev){
- var pick=ev.target.dataset.pick;if(pick){document.getElementById("f_event").value=pick;updatePay();return}
- var card=ev.target.closest("[data-open]");if(card){document.getElementById("f_event").value=card.dataset.open;updatePay();document.getElementById("register").scrollIntoView({behavior:"smooth"})}
-});
-document.getElementById("rf").addEventListener("submit",async function(ev){ev.preventDefault();
-  var m=document.getElementById("msg"),body={event_id:+document.getElementById("f_event").value,name:document.getElementById("f_name").value.trim(),email:document.getElementById("f_email").value.trim(),phone:document.getElementById("f_phone").value.trim(),college:document.getElementById("f_college").value.trim(),team_members:document.getElementById("f_team").value.trim(),payment_ref:document.getElementById("f_payref").value.trim(),accommodation_required:(typeof getAccommodationRequired==="function"?getAccommodationRequired():null)};
- if(!live){m.textContent="Demo mode: add your Supabase URL and key to save registrations.";return}
- try{var r=await fetch(SB_URL+"/rest/v1/registrations",{method:"POST",headers:Object.assign(hdr(),{Prefer:"return=minimal"}),body:JSON.stringify(body)});
- m.textContent=r.ok?"Registered! See you at PLASMA 2K26.":(r.status===409?"You are already registered for this event.":"Something went wrong. Please try again.");if(r.ok)this.reset()}
- catch(e){m.textContent="Network error. Please try again."}});
-loadEvents();buildGallery();
-var as=document.getElementById("aboutShots");if(as)as.addEventListener("click",function(ev){var im=ev.target.closest("img");if(!im)return;openPicture(im.src,im.alt||"PLASMA 2K26 photo")});
-var q=new URLSearchParams(location.search).get("event");
-if(q){setTimeout(function(){var f=document.getElementById("f_event");f.value=q;updatePay();document.getElementById("register").scrollIntoView()},600)}
-})();
-</script>
-
-<script>
-document.addEventListener("change", function(e){
-  if(!e.target || e.target.name !== "accommodation") return;
-  var yes=document.getElementById("accommodation_yes"), no=document.getElementById("accommodation_no");
-  if(e.target===yes && yes.checked) no.checked=false;
-  if(e.target===no && no.checked) yes.checked=false;
-  if(typeof updateAccommodationUI === "function") updateAccommodationUI();
-});
-</script>
-
-
-<script>
-(function(){
-  var yes=document.getElementById("accommodation_yes");
-  var no=document.getElementById("accommodation_no");
-  var box=document.getElementById("accommodationGoogleForm");
-  var link=document.getElementById("accommodationGoogleFormLink");
-  var formUrl="https://forms.gle/X1nSygu3R9hceA2g8";
-
-  function updateAccommodation(){
-    if(!yes || !no) return;
-    if(yes.checked) no.checked=false;
-    if(no.checked) yes.checked=false;
-    var required=!!yes.checked;
-    if(box) box.classList.toggle("hide", !required);
-    if(link){
-      link.href=formUrl;
-      link.target="_blank";
-      link.rel="noopener noreferrer";
-      link.textContent="Open Accommodation Google Form ↗";
-      link.style.display=required ? "inline-flex" : "none";
-    }
-  }
-
-  if(yes) yes.addEventListener("change", updateAccommodation);
-  if(no) no.addEventListener("change", updateAccommodation);
-  window.getAccommodationRequired=function(){
-    return yes && yes.checked ? true : (no && no.checked ? false : null);
-  };
-  window.updateAccommodationUI=updateAccommodation;
-  updateAccommodation();
+buildGallery();
 })();
 </script>
 </body>
