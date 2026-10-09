@@ -201,6 +201,17 @@ body::before{
 <style>
 
 .status-chip{display:inline-flex;align-items:center;gap:8px;position:relative;left:-10px}.status-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;flex:0 0 10px;box-shadow:0 0 0 3px rgba(34,197,94,.18),0 0 12px rgba(34,197,94,.95);animation:statusBlink .9s ease-in-out infinite}@keyframes statusBlink{0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 3px rgba(34,197,94,.18),0 0 12px rgba(34,197,94,.95)}50%{opacity:.25;transform:scale(.78);box-shadow:0 0 0 5px rgba(34,197,94,.06),0 0 3px rgba(34,197,94,.35)}}
+
+/* ===== Event Coordinators ===== */
+.coordinators-section{margin:28px auto 34px;padding:34px 30px 30px;max-width:1000px;background:rgba(10,5,18,.72);border:1px solid #4a285e;border-radius:22px;position:relative;overflow:hidden;text-align:center}
+.coordinators-section:before{content:"";position:absolute;left:12px;top:12px;width:3px;height:20px;background:var(--mag);box-shadow:0 0 12px rgba(255,61,139,.55)}
+.coordinators-title{margin:0;color:var(--gold);font-family:Georgia,serif;font-size:42px;font-weight:700}
+.coordinators-line{width:124px;height:4px;margin:24px auto 24px;background:linear-gradient(90deg,var(--mag),var(--gold))}
+.coordinators-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.coordinator-card{background:rgba(28,19,39,.9);border:1px solid #5a326e;border-radius:20px;padding:28px 18px 24px;min-height:125px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-sizing:border-box}
+.coordinator-name{font-size:22px;font-weight:800;color:#f4edf8;margin-bottom:18px}
+.coordinator-phone{font-size:21px;color:#e8ddec;letter-spacing:.3px}
+@media(max-width:760px){.coordinators-section{padding:28px 18px}.coordinators-title{font-size:32px}.coordinators-grid{grid-template-columns:1fr}.coordinator-card{min-height:110px}}
 </style>
 </style>
 
@@ -271,16 +282,29 @@ body::before{
 <div class="stat"><b>Open</b><span>To students across India</span></div>
 </div>
 
-<section id="coordinators" class="coordinator-top">
-<h2>Event Coordinators</h2>
-<div class="coordinator-grid">
-
-<div class="coordinator-card"><b>Vivek GK</b><a href="tel:+917411563037">74115 63037</a></div>
- <div class="coordinator-card"><b>Thrishul Kumar BS</b><a href="tel:+919380795731">93807 95731</a></div>
-<div class="coordinator-card"><b>Nimitha Sindhe</b><a href="tel:+919035316490">90353 16490</a></div>
-</div></section>
-
 <section id="college">
+
+
+<!-- EVENT COORDINATORS: placed before About JNNCE -->
+<section class="coordinators-section rv" id="eventCoordinators">
+  <h2 class="coordinators-title">Event Coordinators</h2>
+  <div class="coordinators-line"></div>
+  <div class="coordinators-grid">
+    <div class="coordinator-card rv">
+      <div class="coordinator-name">Thrishul Kumar BS</div>
+      <div class="coordinator-phone">93807 95731</div>
+    </div>
+    <div class="coordinator-card rv">
+      <div class="coordinator-name">Vivek GK</div>
+      <div class="coordinator-phone">74115 63037</div>
+    </div>
+    <div class="coordinator-card rv">
+      <div class="coordinator-name">Nimitha Sindhe</div>
+      <div class="coordinator-phone">90353 16490</div>
+    </div>
+  </div>
+</section>
+
 <h2>About JNNCE</h2>
 <p class="about rv">Jawaharlal Nehru New College of Engineering (JNNCE), Shivamogga, is an engineering institution affiliated to Visvesvaraya Technological University (VTU), Belagavi. PLASMA 2K26 is hosted on its campus on Savalanga Road, Navule, bringing together students, coordinators and faculty from across departments to run the fest.</p>
 <div class="about-shots rv">
@@ -305,8 +329,6 @@ body::before{
 <img src="images/about/a8.jpg" data-about-fallback="7" onerror="aboutImgFallback(this)" alt="Tyre-lined robotics arena with spectators" loading="lazy" data-base="images/about/a8" data-i="0">
 </div>
 </section>
- 
-
 
 <section id="events">
 <h2>Events</h2>
