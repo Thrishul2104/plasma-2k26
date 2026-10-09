@@ -337,9 +337,9 @@ body::before{
       <p class="muted" style="margin-bottom:12px">Please complete the accommodation registration form:</p>
       <a id="accommodationGoogleFormLink"
          class="btn"
-         href="#"
+         href="https://forms.gle/X1nSygu3R9hceA2g8"
          target="_blank"
-         rel="noopener noreferrer">Accommodation Registration Google Form ↗</a>
+         rel="noopener noreferrer">Open Accommodation Google Form ↗</a>
     </div>
   </div>
 </div>
@@ -576,30 +576,28 @@ document.addEventListener("change", function(e){
   var no=document.getElementById("accommodation_no");
   var box=document.getElementById("accommodationGoogleForm");
   var link=document.getElementById("accommodationGoogleFormLink");
-  var formUrl=(typeof ACCOMMODATION_GOOGLE_FORM_URL!=="undefined")?String(ACCOMMODATION_GOOGLE_FORM_URL).trim():"";
+  var formUrl="https://forms.gle/X1nSygu3R9hceA2g8";
+
   function updateAccommodation(){
-    if(!yes||!no)return;
+    if(!yes || !no) return;
     if(yes.checked) no.checked=false;
     if(no.checked) yes.checked=false;
     var required=!!yes.checked;
-    if(box) box.classList.toggle("hide",!required);
+    if(box) box.classList.toggle("hide", !required);
     if(link){
-      var valid=formUrl && formUrl.indexOf("YOUR_GOOGLE_FORM")!==0;
-      link.style.display=required?"inline-block":"none";
-      link.href=valid?formUrl:"#";
-      link.textContent=valid?"Accommodation Registration Google Form ↗":"Add Google Form Link";
+      link.href=formUrl;
       link.target="_blank";
       link.rel="noopener noreferrer";
+      link.textContent="Open Accommodation Google Form ↗";
+      link.style.display=required ? "inline-flex" : "none";
     }
   }
-  yes&&yes.addEventListener("change",updateAccommodation);
-  no&&no.addEventListener("change",updateAccommodation);
-  link&&link.addEventListener("click",function(ev){
-    var url=(typeof ACCOMMODATION_GOOGLE_FORM_URL!=="undefined")?String(ACCOMMODATION_GOOGLE_FORM_URL).trim():"";
-    if(!url || url.indexOf("YOUR_GOOGLE_FORM")===0){ev.preventDefault();alert("Please add your Google Form URL in ACCOMMODATION_GOOGLE_FORM_URL in the HTML file.");return;}
-    ev.preventDefault();window.open(url,"_blank","noopener,noreferrer");
-  });
-  window.getAccommodationRequired=function(){return yes&&yes.checked?true:(no&&no.checked?false:null)};
+
+  if(yes) yes.addEventListener("change", updateAccommodation);
+  if(no) no.addEventListener("change", updateAccommodation);
+  window.getAccommodationRequired=function(){
+    return yes && yes.checked ? true : (no && no.checked ? false : null);
+  };
   window.updateAccommodationUI=updateAccommodation;
   updateAccommodation();
 })();
